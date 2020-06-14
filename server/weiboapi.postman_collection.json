@@ -841,7 +841,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://pi.deadpoetspoon.xyz:7800/yiqing/?time=2020-03-01&scale=z&datacode=nct",
+							"raw": "http://pi.deadpoetspoon.xyz:7800/yiqing/?time=2020-03-01&scalecode=s&datacode=ac",
 							"protocol": "http",
 							"host": [
 								"pi",
@@ -860,13 +860,13 @@
 									"description": "获取疫情信息的日期，格式为：yyyy-mm-dd，必要参数"
 								},
 								{
-									"key": "scale",
-									"value": "z",
+									"key": "scalecode",
+									"value": "s",
 									"description": "确定某个或多个尺度下的疫情信息，z = 中国 s = 省级 h = 湖北，参数为zsh的随意组合，如zh，hs，可选参数，默认为全国一级数据"
 								},
 								{
 									"key": "datacode",
-									"value": "nct",
+									"value": "ac",
 									"description": "获取数据类型代码，t = 时间 a = 地区代号 n = 地区名 c = 确诊人数 s = 疑似人数 h = 治愈人数 d = 死亡人数，参数为其自由组合，如tdc，可选参数，默认为，地区名\n、时间以及确诊人数"
 								}
 							]
@@ -880,7 +880,7 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "http://pi.deadpoetspoon.xyz:7800/yiqing/?time=2020-03-01&scale=z&datacode=nct",
+									"raw": "http://pi.deadpoetspoon.xyz:7800/yiqing/?time=2020-03-01&scalecode=s",
 									"protocol": "http",
 									"host": [
 										"pi",
@@ -899,14 +899,15 @@
 											"description": "获取疫情信息的日期，格式为：yyyy-mm-dd，必要参数"
 										},
 										{
-											"key": "scale",
-											"value": "z",
+											"key": "scalecode",
+											"value": "s",
 											"description": "确定某个或多个尺度下的疫情信息，z = 中国 s = 省级 h = 湖北，参数为zsh的随意组合，如zh，hs，可选参数，默认为全国一级数据"
 										},
 										{
 											"key": "datacode",
-											"value": "nct",
-											"description": "获取数据类型代码，t = 时间 a = 地区代号 n = 地区名 c = 确诊人数 s = 疑似人数 h = 治愈人数 d = 死亡人数，参数为其自由组合，如tdc，可选参数，默认为，地区名\n、时间以及确诊人数"
+											"value": "ac",
+											"description": "获取数据类型代码，t = 时间 a = 地区代号 n = 地区名 c = 确诊人数 s = 疑似人数 h = 治愈人数 d = 死亡人数，参数为其自由组合，如tdc，可选参数，默认为，地区名\n、时间以及确诊人数",
+											"disabled": true
 										}
 									]
 								}
@@ -917,7 +918,7 @@
 							"header": [
 								{
 									"key": "Date",
-									"value": "Sat, 06 Jun 2020 13:41:33 GMT"
+									"value": "Thu, 11 Jun 2020 16:22:16 GMT"
 								},
 								{
 									"key": "Server",
@@ -941,7 +942,7 @@
 								},
 								{
 									"key": "Content-Length",
-									"value": "57"
+									"value": "2015"
 								},
 								{
 									"key": "X-Content-Type-Options",
@@ -949,7 +950,7 @@
 								}
 							],
 							"cookie": [],
-							"body": "[\n    {\n        \"time\": \"2020-03-01\",\n        \"name\": \"中国\",\n        \"confirmed\": 80174\n    }\n]"
+							"body": "[\n    {\n        \"time\": \"2020-03-01\",\n        \"name\": \"北京市\",\n        \"confirmed\": 414\n    },\n    {\n        \"time\": \"2020-03-01\",\n        \"name\": \"天津市\",\n        \"confirmed\": 136\n    },\n    {\n        \"time\": \"2020-03-01\",\n        \"name\": \"河北省\",\n        \"confirmed\": 318\n    },\n    {\n        \"time\": \"2020-03-01\",\n        \"name\": \"山西省\",\n        \"confirmed\": 133\n    },\n    {\n        \"time\": \"2020-03-01\",\n        \"name\": \"内蒙古自治区\",\n        \"confirmed\": 75\n    },\n    {\n        \"time\": \"2020-03-01\",\n        \"name\": \"辽宁省\",\n        \"confirmed\": 122\n    },\n    {\n        \"time\": \"2020-03-01\",\n        \"name\": \"吉林省\",\n        \"confirmed\": 93\n    },\n    {\n        \"time\": \"2020-03-01\",\n        \"name\": \"黑龙江省\",\n        \"confirmed\": 480\n    },\n    {\n        \"time\": \"2020-03-01\",\n        \"name\": \"上海市\",\n        \"confirmed\": 337\n    },\n    {\n        \"time\": \"2020-03-01\",\n        \"name\": \"江苏省\",\n        \"confirmed\": 631\n    },\n    {\n        \"time\": \"2020-03-01\",\n        \"name\": \"浙江省\",\n        \"confirmed\": 1218\n    },\n    {\n        \"time\": \"2020-03-01\",\n        \"name\": \"安徽省\",\n        \"confirmed\": 990\n    },\n    {\n        \"time\": \"2020-03-01\",\n        \"name\": \"福建省\",\n        \"confirmed\": 296\n    },\n    {\n        \"time\": \"2020-03-01\",\n        \"name\": \"江西省\",\n        \"confirmed\": 935\n    },\n    {\n        \"time\": \"2020-03-01\",\n        \"name\": \"山东省\",\n        \"confirmed\": 758\n    },\n    {\n        \"time\": \"2020-03-01\",\n        \"name\": \"河南省\",\n        \"confirmed\": 1272\n    },\n    {\n        \"time\": \"2020-03-01\",\n        \"name\": \"湖北省\",\n        \"confirmed\": 67103\n    },\n    {\n        \"time\": \"2020-03-01\",\n        \"name\": \"湖南省\",\n        \"confirmed\": 1018\n    },\n    {\n        \"time\": \"2020-03-01\",\n        \"name\": \"广东省\",\n        \"confirmed\": 1350\n    },\n    {\n        \"time\": \"2020-03-01\",\n        \"name\": \"广西壮族自治区\",\n        \"confirmed\": 252\n    },\n    {\n        \"time\": \"2020-03-01\",\n        \"name\": \"海南省\",\n        \"confirmed\": 168\n    },\n    {\n        \"time\": \"2020-03-01\",\n        \"name\": \"重庆市\",\n        \"confirmed\": 576\n    },\n    {\n        \"time\": \"2020-03-01\",\n        \"name\": \"四川省\",\n        \"confirmed\": 538\n    },\n    {\n        \"time\": \"2020-03-01\",\n        \"name\": \"贵州省\",\n        \"confirmed\": 146\n    },\n    {\n        \"time\": \"2020-03-01\",\n        \"name\": \"云南省\",\n        \"confirmed\": 174\n    },\n    {\n        \"time\": \"2020-03-01\",\n        \"name\": \"西藏自治区\",\n        \"confirmed\": 1\n    },\n    {\n        \"time\": \"2020-03-01\",\n        \"name\": \"陕西省\",\n        \"confirmed\": 245\n    },\n    {\n        \"time\": \"2020-03-01\",\n        \"name\": \"甘肃省\",\n        \"confirmed\": 91\n    },\n    {\n        \"time\": \"2020-03-01\",\n        \"name\": \"青海省\",\n        \"confirmed\": 18\n    },\n    {\n        \"time\": \"2020-03-01\",\n        \"name\": \"宁夏回族自治区\",\n        \"confirmed\": 74\n    },\n    {\n        \"time\": \"2020-03-01\",\n        \"name\": \"新疆维吾尔自治区\",\n        \"confirmed\": 76\n    },\n    {\n        \"time\": \"2020-03-01\",\n        \"name\": \"台湾省\",\n        \"confirmed\": 40\n    },\n    {\n        \"time\": \"2020-03-01\",\n        \"name\": \"香港特别行政区\",\n        \"confirmed\": 98\n    },\n    {\n        \"time\": \"2020-03-01\",\n        \"name\": \"澳门特别行政区\",\n        \"confirmed\": 10\n    }\n]"
 						}
 					]
 				},
@@ -959,7 +960,18 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "?begintime=2020-02-27&endtime=2020-03-01&scale=z&datacode=nc",
+							"raw": "http://pi.deadpoetspoon.xyz:7800/yiqing/?begintime=2020-02-27&endtime=2020-03-01&scalecode=z&datacode=nct",
+							"protocol": "http",
+							"host": [
+								"pi",
+								"deadpoetspoon",
+								"xyz"
+							],
+							"port": "7800",
+							"path": [
+								"yiqing",
+								""
+							],
 							"query": [
 								{
 									"key": "begintime",
@@ -972,13 +984,13 @@
 									"description": "获取疫情信息的结束日期，格式为：yyyy-mm-dd，必要参数"
 								},
 								{
-									"key": "scale",
+									"key": "scalecode",
 									"value": "z",
 									"description": "确定某个或多个尺度下的疫情信息，z = 中国 s = 省级 h = 湖北，参数为zsh的随意组合，如zh，hs，可选参数，默认为全国一级数据"
 								},
 								{
 									"key": "datacode",
-									"value": "nc",
+									"value": "nct",
 									"description": "获取数据类型代码，t = 时间 a = 地区代号 n = 地区名 c = 确诊人数 s = 疑似人数 h = 治愈人数 d = 死亡人数，参数为其自由组合，如tdc，可选参数，默认为，地区名以及确诊人数"
 								}
 							]
@@ -992,7 +1004,7 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "http://pi.deadpoetspoon.xyz:7800/yiqing/?begintime=2020-02-27&endtime=2020-03-01&scale=z&datacode=nc",
+									"raw": "http://pi.deadpoetspoon.xyz:7800/yiqing/?begintime=2020-02-27&endtime=2020-03-01&scalecode=z&datacode=nct",
 									"protocol": "http",
 									"host": [
 										"pi",
@@ -1016,13 +1028,13 @@
 											"description": "获取疫情信息的结束日期，格式为：yyyy-mm-dd，必要参数"
 										},
 										{
-											"key": "scale",
+											"key": "scalecode",
 											"value": "z",
 											"description": "确定某个或多个尺度下的疫情信息，z = 中国 s = 省级 h = 湖北，参数为zsh的随意组合，如zh，hs，可选参数，默认为全国一级数据"
 										},
 										{
 											"key": "datacode",
-											"value": "nc",
+											"value": "nct",
 											"description": "获取数据类型代码，t = 时间 a = 地区代号 n = 地区名 c = 确诊人数 s = 疑似人数 h = 治愈人数 d = 死亡人数，参数为其自由组合，如tdc，可选参数，默认为，地区名以及确诊人数"
 										}
 									]
@@ -1034,7 +1046,7 @@
 							"header": [
 								{
 									"key": "Date",
-									"value": "Sat, 06 Jun 2020 13:41:22 GMT"
+									"value": "Thu, 11 Jun 2020 16:23:01 GMT"
 								},
 								{
 									"key": "Server",
@@ -1058,7 +1070,7 @@
 								},
 								{
 									"key": "Content-Length",
-									"value": "145"
+									"value": "225"
 								},
 								{
 									"key": "X-Content-Type-Options",
@@ -1066,7 +1078,7 @@
 								}
 							],
 							"cookie": [],
-							"body": "[\n    {\n        \"name\": \"中国\",\n        \"confirmed\": 78959\n    },\n    {\n        \"name\": \"中国\",\n        \"confirmed\": 79389\n    },\n    {\n        \"name\": \"中国\",\n        \"confirmed\": 79968\n    },\n    {\n        \"name\": \"中国\",\n        \"confirmed\": 80174\n    }\n]"
+							"body": "[\n    {\n        \"time\": \"2020-02-27\",\n        \"name\": \"中国\",\n        \"confirmed\": 78959\n    },\n    {\n        \"time\": \"2020-02-28\",\n        \"name\": \"中国\",\n        \"confirmed\": 79389\n    },\n    {\n        \"time\": \"2020-02-29\",\n        \"name\": \"中国\",\n        \"confirmed\": 79968\n    },\n    {\n        \"time\": \"2020-03-01\",\n        \"name\": \"中国\",\n        \"confirmed\": 80174\n    }\n]"
 						}
 					]
 				},
@@ -1076,7 +1088,40 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": ""
+							"raw": "http://pi.deadpoetspoon.xyz:7800/yiqing/?time=2020-02-27&areacode=420500&areaname=湖北&datacode=ncta",
+							"protocol": "http",
+							"host": [
+								"pi",
+								"deadpoetspoon",
+								"xyz"
+							],
+							"port": "7800",
+							"path": [
+								"yiqing",
+								""
+							],
+							"query": [
+								{
+									"key": "time",
+									"value": "2020-02-27",
+									"description": "获取疫情信息的日期，格式为：yyyy-mm-dd，必要参数"
+								},
+								{
+									"key": "areacode",
+									"value": "420500",
+									"description": "区域代码，与areaname至少保留一个"
+								},
+								{
+									"key": "areaname",
+									"value": "湖北",
+									"description": "区域名称，当区域代码存在时忽略该参数"
+								},
+								{
+									"key": "datacode",
+									"value": "ncta",
+									"description": "获取数据类型代码，t = 时间 a = 地区代号 n = 地区名 c = 确诊人数 s = 疑似人数 h = 治愈人数 d = 死亡人数，参数为其自由组合，如tdc，可选参数，默认为，地区名以及确诊人数"
+								}
+							]
 						},
 						"description": "获取单个日期某个具体区域的疫情数据"
 					},
@@ -1087,7 +1132,7 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "http://pi.deadpoetspoon.xyz:7800/yiqing/?time=2020-03-01&areacode=0&areaname=湖北&datacode=nct",
+									"raw": "http://pi.deadpoetspoon.xyz:7800/yiqing/?time=2020-02-27&areacode=420500&areaname=湖北&datacode=ncta",
 									"protocol": "http",
 									"host": [
 										"pi",
@@ -1102,12 +1147,12 @@
 									"query": [
 										{
 											"key": "time",
-											"value": "2020-03-01",
+											"value": "2020-02-27",
 											"description": "获取疫情信息的日期，格式为：yyyy-mm-dd，必要参数"
 										},
 										{
 											"key": "areacode",
-											"value": "0",
+											"value": "420500",
 											"description": "区域代码，与areaname至少保留一个"
 										},
 										{
@@ -1117,8 +1162,8 @@
 										},
 										{
 											"key": "datacode",
-											"value": "nct",
-											"description": "获取数据类型代码，t = 时间 a = 地区代号 n = 地区名 c = 确诊人数 s = 疑似人数 h = 治愈人数 d = 死亡人数，参数为其自由组合，如tdc，可选参数，默认为，地区名、时间以及确诊人数"
+											"value": "ncta",
+											"description": "获取数据类型代码，t = 时间 a = 地区代号 n = 地区名 c = 确诊人数 s = 疑似人数 h = 治愈人数 d = 死亡人数，参数为其自由组合，如tdc，可选参数，默认为，地区名以及确诊人数"
 										}
 									]
 								}
@@ -1129,7 +1174,7 @@
 							"header": [
 								{
 									"key": "Date",
-									"value": "Sat, 06 Jun 2020 13:40:48 GMT"
+									"value": "Thu, 11 Jun 2020 16:24:29 GMT"
 								},
 								{
 									"key": "Server",
@@ -1153,7 +1198,7 @@
 								},
 								{
 									"key": "Content-Length",
-									"value": "57"
+									"value": "76"
 								},
 								{
 									"key": "X-Content-Type-Options",
@@ -1161,7 +1206,7 @@
 								}
 							],
 							"cookie": [],
-							"body": "[\n    {\n        \"time\": \"2020-03-01\",\n        \"name\": \"中国\",\n        \"confirmed\": 80174\n    }\n]"
+							"body": "[\n    {\n        \"time\": \"2020-02-27\",\n        \"areacode\": 420500,\n        \"name\": \"宜昌市\",\n        \"confirmed\": 929\n    }\n]"
 						}
 					]
 				},
@@ -1267,7 +1312,7 @@
 							"header": [
 								{
 									"key": "Date",
-									"value": "Sat, 06 Jun 2020 13:38:51 GMT"
+									"value": "Thu, 11 Jun 2020 16:24:38 GMT"
 								},
 								{
 									"key": "Server",
@@ -1305,6 +1350,1204 @@
 				}
 			],
 			"description": "获取疫情每日基本信息,包括确诊人数,疑似人数,治愈人数,死亡人数",
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "热搜词频",
+			"item": [
+				{
+					"name": "每日热搜词频",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://pi.deadpoetspoon.xyz:7800/rscipin/?time=2020-05-01&num=200",
+							"protocol": "http",
+							"host": [
+								"pi",
+								"deadpoetspoon",
+								"xyz"
+							],
+							"port": "7800",
+							"path": [
+								"rscipin",
+								""
+							],
+							"query": [
+								{
+									"key": "time",
+									"value": "2020-05-01",
+									"description": "热搜词频某日的统计结果，格式为：yyyy-mm-dd，必要参数"
+								},
+								{
+									"key": "num",
+									"value": "200",
+									"description": "获取结果最大数量。可选参数，默认为所有数据"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "每日热搜词频",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://pi.deadpoetspoon.xyz:7800/rscipin/?time=2020-05-01",
+									"protocol": "http",
+									"host": [
+										"pi",
+										"deadpoetspoon",
+										"xyz"
+									],
+									"port": "7800",
+									"path": [
+										"rscipin",
+										""
+									],
+									"query": [
+										{
+											"key": "time",
+											"value": "2020-05-01",
+											"description": "热搜词频某日的统计结果，格式为：yyyy-mm-dd，必要参数"
+										},
+										{
+											"key": "num",
+											"value": "200",
+											"description": "获取结果最大数量。可选参数，默认为所有数据",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Thu, 11 Jun 2020 10:51:46 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "WSGIServer/0.2 CPython/3.7.3"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept, Cookie, Origin"
+								},
+								{
+									"key": "Allow",
+									"value": "POST, GET, OPTIONS"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Length",
+									"value": "5426"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"word\": \"新冠\",\n        \"weight\": 12627144.7288923\n    },\n    {\n        \"word\": \"口罩\",\n        \"weight\": 7452618.64638055\n    },\n    {\n        \"word\": \"确诊\",\n        \"weight\": 7384003.49170205\n    },\n    {\n        \"word\": \"106\",\n        \"weight\": 5496630.74616587\n    },\n    {\n        \"word\": \"万例\",\n        \"weight\": 5177931.60768157\n    },\n    {\n        \"word\": \"疫情\",\n        \"weight\": 4557891.7149448\n    },\n    {\n        \"word\": \"肺炎\",\n        \"weight\": 4351984.79607483\n    },\n    {\n        \"word\": \"销毁\",\n        \"weight\": 4148891.54406841\n    },\n    {\n        \"word\": \"扔掉\",\n        \"weight\": 4074170.03051503\n    },\n    {\n        \"word\": \"留学生\",\n        \"weight\": 4038999.43814766\n    },\n    {\n        \"word\": \"住院\",\n        \"weight\": 3747456.47260311\n    },\n    {\n        \"word\": \"行李\",\n        \"weight\": 3485373.56269594\n    },\n    {\n        \"word\": \"酒店\",\n        \"weight\": 3279733.52517823\n    },\n    {\n        \"word\": \"病毒检测\",\n        \"weight\": 3238102.03391787\n    },\n    {\n        \"word\": \"回国\",\n        \"weight\": 3070835.54915431\n    },\n    {\n        \"word\": \"病毒\",\n        \"weight\": 3022041.06016826\n    },\n    {\n        \"word\": \"核酸\",\n        \"weight\": 2886155.20599075\n    },\n    {\n        \"word\": \"钟南山\",\n        \"weight\": 2693224.93692866\n    },\n    {\n        \"word\": \"哪里\",\n        \"weight\": 2651524.25424653\n    },\n    {\n        \"word\": \"点赞\",\n        \"weight\": 2377366.90731295\n    },\n    {\n        \"word\": \"阳性\",\n        \"weight\": 2343841.36706355\n    },\n    {\n        \"word\": \"广大青年\",\n        \"weight\": 2270180.176696\n    },\n    {\n        \"word\": \"检测\",\n        \"weight\": 2191493.85227448\n    },\n    {\n        \"word\": \"黑龙江\",\n        \"weight\": 2169536.28425795\n    },\n    {\n        \"word\": \"美国\",\n        \"weight\": 2169173.95243429\n    },\n    {\n        \"word\": \"五一\",\n        \"weight\": 2165355.3889128\n    },\n    {\n        \"word\": \"假期\",\n        \"weight\": 1957604.62956234\n    },\n    {\n        \"word\": \"山东\",\n        \"weight\": 1874801.45956972\n    },\n    {\n        \"word\": \"总理\",\n        \"weight\": 1809113.18249353\n    },\n    {\n        \"word\": \"通报\",\n        \"weight\": 1805345.20427324\n    },\n    {\n        \"word\": \"涂鸦\",\n        \"weight\": 1751731.80533302\n    },\n    {\n        \"word\": \"俄罗斯\",\n        \"weight\": 1725592.94336963\n    },\n    {\n        \"word\": \"确定\",\n        \"weight\": 1711016.85719627\n    },\n    {\n        \"word\": \"聚集\",\n        \"weight\": 1675018.22771078\n    },\n    {\n        \"word\": \"官方\",\n        \"weight\": 1664412.80098514\n    },\n    {\n        \"word\": \"彭斯\",\n        \"weight\": 1513941.2599374\n    },\n    {\n        \"word\": \"高中生\",\n        \"weight\": 1466823.46199782\n    },\n    {\n        \"word\": \"价格\",\n        \"weight\": 1453955.31467856\n    },\n    {\n        \"word\": \"院士\",\n        \"weight\": 1441325.78320539\n    },\n    {\n        \"word\": \"香港\",\n        \"weight\": 1399080.90238593\n    },\n    {\n        \"word\": \"减压\",\n        \"weight\": 1392253.77881105\n    },\n    {\n        \"word\": \"诊所\",\n        \"weight\": 1303762.58993789\n    },\n    {\n        \"word\": \"输液\",\n        \"weight\": 1262395.92349324\n    },\n    {\n        \"word\": \"家属\",\n        \"weight\": 1244977.46817473\n    },\n    {\n        \"word\": \"病例\",\n        \"weight\": 1207583.68365479\n    },\n    {\n        \"word\": \"和解\",\n        \"weight\": 1113889.74485938\n    },\n    {\n        \"word\": \"约翰逊\",\n        \"weight\": 1075113.00436294\n    },\n    {\n        \"word\": \"民戴\",\n        \"weight\": 1054832.89554088\n    },\n    {\n        \"word\": \"柳叶刀\",\n        \"weight\": 1047691.91441915\n    },\n    {\n        \"word\": \"已任\",\n        \"weight\": 1033864.2780062\n    },\n    {\n        \"word\": \"张定宇\",\n        \"weight\": 1020702.8313046\n    },\n    {\n        \"word\": \"卫健委\",\n        \"weight\": 1020702.8313046\n    },\n    {\n        \"word\": \"表情\",\n        \"weight\": 996400.848250671\n    },\n    {\n        \"word\": \"阴谋论\",\n        \"weight\": 975243.457621047\n    },\n    {\n        \"word\": \"医院\",\n        \"weight\": 949648.980380025\n    },\n    {\n        \"word\": \"总编\",\n        \"weight\": 932694.523668732\n    },\n    {\n        \"word\": \"新增\",\n        \"weight\": 921277.092964507\n    },\n    {\n        \"word\": \"互免\",\n        \"weight\": 888364.750524249\n    },\n    {\n        \"word\": \"14\",\n        \"weight\": 888364.750524249\n    },\n    {\n        \"word\": \"达成\",\n        \"weight\": 886743.015302891\n    },\n    {\n        \"word\": \"女子\",\n        \"weight\": 863377.104328348\n    },\n    {\n        \"word\": \"妻子\",\n        \"weight\": 837872.959200486\n    },\n    {\n        \"word\": \"死亡\",\n        \"weight\": 826278.694772187\n    },\n    {\n        \"word\": \"武汉市\",\n        \"weight\": 779274.474264059\n    },\n    {\n        \"word\": \"袁隆平\",\n        \"weight\": 764528.439791991\n    },\n    {\n        \"word\": \"网约车\",\n        \"weight\": 728958.685163831\n    },\n    {\n        \"word\": \"医院船\",\n        \"weight\": 710705.59621189\n    },\n    {\n        \"word\": \"出行\",\n        \"weight\": 695908.764815884\n    },\n    {\n        \"word\": \"致敬\",\n        \"weight\": 684243.27374658\n    },\n    {\n        \"word\": \"湖北省\",\n        \"weight\": 678999.811606929\n    },\n    {\n        \"word\": \"入境\",\n        \"weight\": 674768.773376196\n    },\n    {\n        \"word\": \"警惕\",\n        \"weight\": 670903.386300325\n    },\n    {\n        \"word\": \"规定\",\n        \"weight\": 665137.342196161\n    },\n    {\n        \"word\": \"60%\",\n        \"weight\": 663489.596410949\n    },\n    {\n        \"word\": \"放松\",\n        \"weight\": 657232.236003676\n    },\n    {\n        \"word\": \"回应\",\n        \"weight\": 652921.261207843\n    },\n    {\n        \"word\": \"度过\",\n        \"weight\": 645879.256488307\n    },\n    {\n        \"word\": \"起源\",\n        \"weight\": 637012.216296444\n    },\n    {\n        \"word\": \"隔离\",\n        \"weight\": 607401.387110173\n    },\n    {\n        \"word\": \"高峰\",\n        \"weight\": 589823.860196348\n    },\n    {\n        \"word\": \"知道\",\n        \"weight\": 540664.882189956\n    },\n    {\n        \"word\": \"劳动者\",\n        \"weight\": 538553.242581637\n    },\n    {\n        \"word\": \"商务\",\n        \"weight\": 527311.9993638\n    },\n    {\n        \"word\": \"第一天\",\n        \"weight\": 501256.803701546\n    },\n    {\n        \"word\": \"输入\",\n        \"weight\": 478410.017161944\n    },\n    {\n        \"word\": \"主任\",\n        \"weight\": 477424.946614824\n    },\n    {\n        \"word\": \"境外\",\n        \"weight\": 461051.045794806\n    },\n    {\n        \"word\": \"美军\",\n        \"weight\": 450017.992269399\n    },\n    {\n        \"word\": \"安慰\",\n        \"weight\": 438110.299429088\n    },\n    {\n        \"word\": \"英国\",\n        \"weight\": 434069.237620979\n    },\n    {\n        \"word\": \"本土\",\n        \"weight\": 417768.361363199\n    },\n    {\n        \"word\": \"人员\",\n        \"weight\": 415470.061677995\n    },\n    {\n        \"word\": \"武汉\",\n        \"weight\": 412894.381715618\n    },\n    {\n        \"word\": \"纽约\",\n        \"weight\": 412433.79366288\n    },\n    {\n        \"word\": \"上新冠\",\n        \"weight\": 394254.783132201\n    },\n    {\n        \"word\": \"错换\",\n        \"weight\": 357273.350295953\n    },\n    {\n        \"word\": \"384\",\n        \"weight\": 347865.802183135\n    },\n    {\n        \"word\": \"离开\",\n        \"weight\": 334625.660946445\n    },\n    {\n        \"word\": \"恢复\",\n        \"weight\": 325815.360983696\n    },\n    {\n        \"word\": \"服务\",\n        \"weight\": 325745.111667179\n    },\n    {\n        \"word\": \"获勋\",\n        \"weight\": 325413.553335939\n    },\n    {\n        \"word\": \"中国国歌\",\n        \"weight\": 325413.553335939\n    },\n    {\n        \"word\": \"上海\",\n        \"weight\": 310597.371935253\n    },\n    {\n        \"word\": \"奏响\",\n        \"weight\": 306545.809823857\n    },\n    {\n        \"word\": \"来自\",\n        \"weight\": 306512.432297895\n    },\n    {\n        \"word\": \"两艘\",\n        \"weight\": 299196.355496413\n    },\n    {\n        \"word\": \"医疗队\",\n        \"weight\": 296836.975178199\n    },\n    {\n        \"word\": \"当事\",\n        \"weight\": 285611.22239952\n    },\n    {\n        \"word\": \"复工\",\n        \"weight\": 284592.603977275\n    },\n    {\n        \"word\": \"记者会\",\n        \"weight\": 284592.603977275\n    },\n    {\n        \"word\": \"军舰\",\n        \"weight\": 265524.559947568\n    },\n    {\n        \"word\": \"塞尔维亚\",\n        \"weight\": 249700.618577271\n    },\n    {\n        \"word\": \"协商\",\n        \"weight\": 223321.028086101\n    },\n    {\n        \"word\": \"失业\",\n        \"weight\": 222122.733494158\n    },\n    {\n        \"word\": \"人生\",\n        \"weight\": 204654.117911429\n    },\n    {\n        \"word\": \"初步\",\n        \"weight\": 188860.004316789\n    },\n    {\n        \"word\": \"万人\",\n        \"weight\": 187500.420410591\n    },\n    {\n        \"word\": \"主持\",\n        \"weight\": 178442.864648173\n    },\n    {\n        \"word\": \"上周\",\n        \"weight\": 171544.695047729\n    },\n    {\n        \"word\": \"首次\",\n        \"weight\": 158453.971208163\n    },\n    {\n        \"word\": \"增加\",\n        \"weight\": 150812.355390752\n    },\n    {\n        \"word\": \"继续\",\n        \"weight\": 140734.884164989\n    }\n]"
+						}
+					]
+				},
+				{
+					"name": "每周热搜词频",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://pi.deadpoetspoon.xyz:7800/rscipin/?week=2&num=200",
+							"protocol": "http",
+							"host": [
+								"pi",
+								"deadpoetspoon",
+								"xyz"
+							],
+							"port": "7800",
+							"path": [
+								"rscipin",
+								""
+							],
+							"query": [
+								{
+									"key": "week",
+									"value": "2",
+									"description": "热搜词频某周的统计结果，取值范围：[1,23]，必要参数"
+								},
+								{
+									"key": "num",
+									"value": "200",
+									"description": "获取结果最大数量。可选参数，默认为所有数据"
+								}
+							]
+						},
+						"description": "以周为单位获取词频统计结果"
+					},
+					"response": [
+						{
+							"name": "每周热搜词频",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://pi.deadpoetspoon.xyz:7800/rscipin/?week=2",
+									"protocol": "http",
+									"host": [
+										"pi",
+										"deadpoetspoon",
+										"xyz"
+									],
+									"port": "7800",
+									"path": [
+										"rscipin",
+										""
+									],
+									"query": [
+										{
+											"key": "week",
+											"value": "2",
+											"description": "热搜词频某周的统计结果，取值范围：[1,23]，必要参数"
+										},
+										{
+											"key": "num",
+											"value": "200",
+											"description": "获取结果最大数量。可选参数，默认为所有数据",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Thu, 11 Jun 2020 10:56:32 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "WSGIServer/0.2 CPython/3.7.3"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept, Cookie, Origin"
+								},
+								{
+									"key": "Allow",
+									"value": "POST, GET, OPTIONS"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Length",
+									"value": "670"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"word\": \"肺炎\",\n        \"weight\": 11628468.0639995\n    },\n    {\n        \"word\": \"不明\",\n        \"weight\": 9984929.84797965\n    },\n    {\n        \"word\": \"武汉\",\n        \"weight\": 8915624.67328211\n    },\n    {\n        \"word\": \"原因\",\n        \"weight\": 6519893.16743339\n    },\n    {\n        \"word\": \"SARS\",\n        \"weight\": 5878323.1322731\n    },\n    {\n        \"word\": \"病原\",\n        \"weight\": 4622535.71276675\n    },\n    {\n        \"word\": \"排除\",\n        \"weight\": 3237506.75938704\n    },\n    {\n        \"word\": \"冠状病毒\",\n        \"weight\": 3040857.97922647\n    },\n    {\n        \"word\": \"出院\",\n        \"weight\": 2968363.77344391\n    },\n    {\n        \"word\": \"治愈\",\n        \"weight\": 2918566.80679343\n    },\n    {\n        \"word\": \"卫健委\",\n        \"weight\": 2816351.94740319\n    },\n    {\n        \"word\": \"病原体\",\n        \"weight\": 2358030.33721155\n    },\n    {\n        \"word\": \"患者\",\n        \"weight\": 2170763.13343889\n    },\n    {\n        \"word\": \"通报\",\n        \"weight\": 1797878.46506252\n    },\n    {\n        \"word\": \"新型\",\n        \"weight\": 1699159.35237248\n    }\n]"
+						}
+					]
+				},
+				{
+					"name": "每月热搜词频",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://pi.deadpoetspoon.xyz:7800/rscipin/?month=6&num=50",
+							"protocol": "http",
+							"host": [
+								"pi",
+								"deadpoetspoon",
+								"xyz"
+							],
+							"port": "7800",
+							"path": [
+								"rscipin",
+								""
+							],
+							"query": [
+								{
+									"key": "month",
+									"value": "6",
+									"description": "热搜词频某月的统计结果，取值范围：[1,6]，必要参数"
+								},
+								{
+									"key": "num",
+									"value": "50",
+									"description": "获取结果最大数量。可选参数，默认为所有数据"
+								}
+							]
+						},
+						"description": "以月为单位统计词频结果"
+					},
+					"response": [
+						{
+							"name": "每月热搜词频(限制结果个数)",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://pi.deadpoetspoon.xyz:7800/rscipin/?month=6&num=50",
+									"protocol": "http",
+									"host": [
+										"pi",
+										"deadpoetspoon",
+										"xyz"
+									],
+									"port": "7800",
+									"path": [
+										"rscipin",
+										""
+									],
+									"query": [
+										{
+											"key": "month",
+											"value": "6",
+											"description": "热搜词频某月的统计结果，取值范围：[1,6]，必要参数"
+										},
+										{
+											"key": "num",
+											"value": "50",
+											"description": "获取结果最大数量。可选参数，默认为所有数据"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Thu, 11 Jun 2020 11:07:05 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "WSGIServer/0.2 CPython/3.7.3"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept, Cookie, Origin"
+								},
+								{
+									"key": "Allow",
+									"value": "GET, POST, OPTIONS"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Length",
+									"value": "2260"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"word\": \"新冠\",\n        \"weight\": 71490184.6278224\n    },\n    {\n        \"word\": \"钟南山\",\n        \"weight\": 49463758.8411151\n    },\n    {\n        \"word\": \"有志\",\n        \"weight\": 45451705.8293482\n    },\n    {\n        \"word\": \"武汉\",\n        \"weight\": 35036276.4471526\n    },\n    {\n        \"word\": \"肺炎\",\n        \"weight\": 28399856.1044777\n    },\n    {\n        \"word\": \"疫情\",\n        \"weight\": 26219076.9077993\n    },\n    {\n        \"word\": \"世卫\",\n        \"weight\": 25190271.5310397\n    },\n    {\n        \"word\": \"新增\",\n        \"weight\": 20249761.6769973\n    },\n    {\n        \"word\": \"发声明\",\n        \"weight\": 19159613.185492\n    },\n    {\n        \"word\": \"美国\",\n        \"weight\": 19116088.0182682\n    },\n    {\n        \"word\": \"李文亮\",\n        \"weight\": 18635119.477978\n    },\n    {\n        \"word\": \"李兰娟\",\n        \"weight\": 15714987.994636\n    },\n    {\n        \"word\": \"感染者\",\n        \"weight\": 15477793.2947164\n    },\n    {\n        \"word\": \"无症状\",\n        \"weight\": 15421913.5968826\n    },\n    {\n        \"word\": \"病例\",\n        \"weight\": 15021663.1812324\n    },\n    {\n        \"word\": \"口罩\",\n        \"weight\": 14767313.3693668\n    },\n    {\n        \"word\": \"武汉大学\",\n        \"weight\": 14491653.9964286\n    },\n    {\n        \"word\": \"确诊\",\n        \"weight\": 13672626.1520027\n    },\n    {\n        \"word\": \"特朗普\",\n        \"weight\": 11998286.5112579\n    },\n    {\n        \"word\": \"牌坊\",\n        \"weight\": 11825408.8991762\n    },\n    {\n        \"word\": \"武汉市\",\n        \"weight\": 10545356.526995\n    },\n    {\n        \"word\": \"174\",\n        \"weight\": 9773722.78375029\n    },\n    {\n        \"word\": \"妻子\",\n        \"weight\": 9600211.13198976\n    },\n    {\n        \"word\": \"10\",\n        \"weight\": 9589846.07783219\n    },\n    {\n        \"word\": \"组织关系\",\n        \"weight\": 9552815.41257804\n    },\n    {\n        \"word\": \"宣布\",\n        \"weight\": 9498962.80589627\n    },\n    {\n        \"word\": \"返校\",\n        \"weight\": 9112922.54609141\n    },\n    {\n        \"word\": \"输入\",\n        \"weight\": 8828227.98345991\n    },\n    {\n        \"word\": \"境外\",\n        \"weight\": 8789685.22573168\n    },\n    {\n        \"word\": \"撞击\",\n        \"weight\": 8748841.76934502\n    },\n    {\n        \"word\": \"病毒\",\n        \"weight\": 8721278.57114542\n    },\n    {\n        \"word\": \"张文宏\",\n        \"weight\": 8097840.85498303\n    },\n    {\n        \"word\": \"核酸\",\n        \"weight\": 7815967.97378554\n    },\n    {\n        \"word\": \"清零\",\n        \"weight\": 7450003.26267891\n    },\n    {\n        \"word\": \"终止\",\n        \"weight\": 7082797.83583153\n    },\n    {\n        \"word\": \"车辆\",\n        \"weight\": 6610373.06199913\n    },\n    {\n        \"word\": \"高职高专\",\n        \"weight\": 6516322.60263197\n    },\n    {\n        \"word\": \"检测\",\n        \"weight\": 6472955.90113547\n    },\n    {\n        \"word\": \"危重症\",\n        \"weight\": 6459797.73667331\n    },\n    {\n        \"word\": \"病毒感染\",\n        \"weight\": 6424488.84641462\n    },\n    {\n        \"word\": \"广州\",\n        \"weight\": 6249426.08454479\n    },\n    {\n        \"word\": \"住宿费\",\n        \"weight\": 6186641.91143818\n    },\n    {\n        \"word\": \"大学生\",\n        \"weight\": 6104064.78696896\n    },\n    {\n        \"word\": \"马云和援\",\n        \"weight\": 6026533.78557693\n    },\n    {\n        \"word\": \"万例\",\n        \"weight\": 5681083.32136152\n    },\n    {\n        \"word\": \"原副\",\n        \"weight\": 5544740.71552005\n    },\n    {\n        \"word\": \"医疗队\",\n        \"weight\": 5497306.5546324\n    },\n    {\n        \"word\": \"吃火锅\",\n        \"weight\": 5497306.5546324\n    },\n    {\n        \"word\": \"牌照\",\n        \"weight\": 5206225.48938062\n    },\n    {\n        \"word\": \"多区\",\n        \"weight\": 5188173.83505604\n    }\n]"
+						},
+						{
+							"name": "每月热搜词频",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://pi.deadpoetspoon.xyz:7800/rscipin/?month=6",
+									"protocol": "http",
+									"host": [
+										"pi",
+										"deadpoetspoon",
+										"xyz"
+									],
+									"port": "7800",
+									"path": [
+										"rscipin",
+										""
+									],
+									"query": [
+										{
+											"key": "month",
+											"value": "6",
+											"description": "热搜词频某月的统计结果，取值范围：[1,6]，必要参数"
+										},
+										{
+											"key": "num",
+											"value": "200",
+											"description": "获取结果最大数量。可选参数，默认为所有数据",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Thu, 11 Jun 2020 11:04:18 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "WSGIServer/0.2 CPython/3.7.3"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept, Cookie, Origin"
+								},
+								{
+									"key": "Allow",
+									"value": "GET, POST, OPTIONS"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Length",
+									"value": "446"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"word\": \"新冠\",\n        \"weight\": 71490184.6278224\n    },\n    {\n        \"word\": \"钟南山\",\n        \"weight\": 49463758.8411151\n    },\n    {\n        \"word\": \"有志\",\n        \"weight\": 45451705.8293482\n    },\n    {\n        \"word\": \"武汉\",\n        \"weight\": 35036276.4471526\n    },\n    {\n        \"word\": \"肺炎\",\n        \"weight\": 28399856.1044777\n    },\n    {\n        \"word\": \"疫情\",\n        \"weight\": 26219076.9077993\n    },\n    {\n        \"word\": \"世卫\",\n        \"weight\": 25190271.5310397\n    },\n    {\n        \"word\": \"新增\",\n        \"weight\": 20249761.6769973\n    },\n    {\n        \"word\": \"发声明\",\n        \"weight\": 19159613.185492\n    },\n    {\n        \"word\": \"美国\",\n        \"weight\": 19116088.0182682\n    }\n]"
+						}
+					]
+				}
+			],
+			"description": "每日每周每月的热搜词频",
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "微博词频",
+			"item": [
+				{
+					"name": "每日微博词频",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://pi.deadpoetspoon.xyz:7800/wbcipin/?time=2020-05-01&num=50",
+							"protocol": "http",
+							"host": [
+								"pi",
+								"deadpoetspoon",
+								"xyz"
+							],
+							"port": "7800",
+							"path": [
+								"wbcipin",
+								""
+							],
+							"query": [
+								{
+									"key": "time",
+									"value": "2020-05-01",
+									"description": "微博词频每日的统计结果，格式为：yyyy-mm-dd，必要参数"
+								},
+								{
+									"key": "num",
+									"value": "50",
+									"description": "获取结果最大数量。可选参数，默认为200"
+								}
+							]
+						},
+						"description": "每日微博词频"
+					},
+					"response": [
+						{
+							"name": "每日微博词频",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://pi.deadpoetspoon.xyz:7800/wbcipin/?time=2020-05-01&num=50",
+									"protocol": "http",
+									"host": [
+										"pi",
+										"deadpoetspoon",
+										"xyz"
+									],
+									"port": "7800",
+									"path": [
+										"wbcipin",
+										""
+									],
+									"query": [
+										{
+											"key": "time",
+											"value": "2020-05-01",
+											"description": "微博词频每日的统计结果，格式为：yyyy-mm-dd，必要参数"
+										},
+										{
+											"key": "num",
+											"value": "50",
+											"description": "获取结果最大数量。可选参数，默认为200"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Sun, 14 Jun 2020 13:13:39 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "WSGIServer/0.2 CPython/3.7.3"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept, Cookie, Origin"
+								},
+								{
+									"key": "Allow",
+									"value": "GET, OPTIONS, POST"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Length",
+									"value": "2217"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"word\": \"酒店\",\n        \"weight\": 330069.075111164\n    },\n    {\n        \"word\": \"新冠\",\n        \"weight\": 312863.917631507\n    },\n    {\n        \"word\": \"视频\",\n        \"weight\": 255356.912280254\n    },\n    {\n        \"word\": \"留学生\",\n        \"weight\": 246663.225566168\n    },\n    {\n        \"word\": \"麦当娜\",\n        \"weight\": 229502.703635836\n    },\n    {\n        \"word\": \"23\",\n        \"weight\": 219413.212109878\n    },\n    {\n        \"word\": \"行李\",\n        \"weight\": 210306.015145828\n    },\n    {\n        \"word\": \"抗体\",\n        \"weight\": 205149.133901312\n    },\n    {\n        \"word\": \"李现\",\n        \"weight\": 178106.661942351\n    },\n    {\n        \"word\": \"销毁\",\n        \"weight\": 167089.829156377\n    },\n    {\n        \"word\": \"证件\",\n        \"weight\": 160148.635556564\n    },\n    {\n        \"word\": \"确诊\",\n        \"weight\": 157071.533265001\n    },\n    {\n        \"word\": \"住院\",\n        \"weight\": 150763.108334023\n    },\n    {\n        \"word\": \"沸点\",\n        \"weight\": 136382.408890686\n    },\n    {\n        \"word\": \"检测\",\n        \"weight\": 118831.03575297\n    },\n    {\n        \"word\": \"核酸\",\n        \"weight\": 114185.543515262\n    },\n    {\n        \"word\": \"30\",\n        \"weight\": 96787.6650132644\n    },\n    {\n        \"word\": \"冠状病毒\",\n        \"weight\": 95368.2307404169\n    },\n    {\n        \"word\": \"Vlog\",\n        \"weight\": 88177.181010133\n    },\n    {\n        \"word\": \"娜娜\",\n        \"weight\": 86453.4629331149\n    },\n    {\n        \"word\": \"抗疫\",\n        \"weight\": 64739.2291177244\n    },\n    {\n        \"word\": \"社交\",\n        \"weight\": 58023.7169658878\n    },\n    {\n        \"word\": \"测出\",\n        \"weight\": 56127.9651459332\n    },\n    {\n        \"word\": \"微博\",\n        \"weight\": 54398.0924831226\n    },\n    {\n        \"word\": \"车窗\",\n        \"weight\": 53283.2019617754\n    },\n    {\n        \"word\": \"转悠\",\n        \"weight\": 52774.9100003271\n    },\n    {\n        \"word\": \"##\",\n        \"weight\": 51704.9666038453\n    },\n    {\n        \"word\": \"价格\",\n        \"weight\": 51528.8019571946\n    },\n    {\n        \"word\": \"出新\",\n        \"weight\": 50907.1270020227\n    },\n    {\n        \"word\": \"免疫力\",\n        \"weight\": 49837.0716382237\n    },\n    {\n        \"word\": \"肖战\",\n        \"weight\": 47931.3409928216\n    },\n    {\n        \"word\": \"疫情\",\n        \"weight\": 45593.1617201534\n    },\n    {\n        \"word\": \"日记\",\n        \"weight\": 43864.5829667975\n    },\n    {\n        \"word\": \"VLOG74\",\n        \"weight\": 43226.7314665574\n    },\n    {\n        \"word\": \"隔離\",\n        \"weight\": 43226.7314665574\n    },\n    {\n        \"word\": \"日記\",\n        \"weight\": 43226.7314665574\n    },\n    {\n        \"word\": \"MyQuarantineDiary\",\n        \"weight\": 43226.7314665574\n    },\n    {\n        \"word\": \"即將\",\n        \"weight\": 43226.7314665574\n    },\n    {\n        \"word\": \"開啟\",\n        \"weight\": 43226.7314665574\n    },\n    {\n        \"word\": \"勞動節\",\n        \"weight\": 43226.7314665574\n    },\n    {\n        \"word\": \"快樂\",\n        \"weight\": 43226.7314665574\n    },\n    {\n        \"word\": \"宠物\",\n        \"weight\": 41114.5317262296\n    },\n    {\n        \"word\": \"医疗\",\n        \"weight\": 37885.09347043\n    },\n    {\n        \"word\": \"2020\",\n        \"weight\": 37305.5800010715\n    },\n    {\n        \"word\": \"锁匠\",\n        \"weight\": 33299.1495164301\n    },\n    {\n        \"word\": \"保障局\",\n        \"weight\": 33243.977171236\n    },\n    {\n        \"word\": \"医疗机构\",\n        \"weight\": 32810.9059601304\n    },\n    {\n        \"word\": \"新型\",\n        \"weight\": 32125.563348059\n    },\n    {\n        \"word\": \"男友\",\n        \"weight\": 30677.4591279754\n    },\n    {\n        \"word\": \"隔离\",\n        \"weight\": 29843.3081705094\n    }\n]"
+						}
+					]
+				},
+				{
+					"name": "每周微博词频",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://pi.deadpoetspoon.xyz:7800/wbcipin/?week=2&num=50",
+							"protocol": "http",
+							"host": [
+								"pi",
+								"deadpoetspoon",
+								"xyz"
+							],
+							"port": "7800",
+							"path": [
+								"wbcipin",
+								""
+							],
+							"query": [
+								{
+									"key": "week",
+									"value": "2",
+									"description": "微博词频某周的统计结果，取值范围：[1,23]，必要参数"
+								},
+								{
+									"key": "num",
+									"value": "50",
+									"description": "获取结果最大数量。可选参数，默认为200"
+								}
+							]
+						},
+						"description": "每周微博词频"
+					},
+					"response": [
+						{
+							"name": "每周微博词频",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://pi.deadpoetspoon.xyz:7800/wbcipin/?week=2&num=50",
+									"protocol": "http",
+									"host": [
+										"pi",
+										"deadpoetspoon",
+										"xyz"
+									],
+									"port": "7800",
+									"path": [
+										"wbcipin",
+										""
+									],
+									"query": [
+										{
+											"key": "week",
+											"value": "2",
+											"description": "微博词频某周的统计结果，取值范围：[1,23]，必要参数"
+										},
+										{
+											"key": "num",
+											"value": "50",
+											"description": "获取结果最大数量。可选参数，默认为200"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Sun, 14 Jun 2020 13:14:02 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "WSGIServer/0.2 CPython/3.7.3"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept, Cookie, Origin"
+								},
+								{
+									"key": "Allow",
+									"value": "GET, OPTIONS, POST"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Length",
+									"value": "2211"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"word\": \"封城\",\n        \"weight\": 16450.8468810361\n    },\n    {\n        \"word\": \"今天\",\n        \"weight\": 13739.2171557047\n    },\n    {\n        \"word\": \"误以为\",\n        \"weight\": 13205.811300191\n    },\n    {\n        \"word\": \"仙境\",\n        \"weight\": 13098.5291317155\n    },\n    {\n        \"word\": \"仙女\",\n        \"weight\": 12473.4325811243\n    },\n    {\n        \"word\": \"大雾\",\n        \"weight\": 12441.052477552\n    },\n    {\n        \"word\": \"恍惚\",\n        \"weight\": 12077.5558965175\n    },\n    {\n        \"word\": \"笑笑\",\n        \"weight\": 10664.8075919994\n    },\n    {\n        \"word\": \"苏州\",\n        \"weight\": 9748.14787212537\n    },\n    {\n        \"word\": \"一只\",\n        \"weight\": 7596.64149342648\n    },\n    {\n        \"word\": \"冠状病毒\",\n        \"weight\": 4789.40960126761\n    },\n    {\n        \"word\": \"赵丽颖\",\n        \"weight\": 3536.46545335788\n    },\n    {\n        \"word\": \"2019\",\n        \"weight\": 2891.8276057015\n    },\n    {\n        \"word\": \"知否\",\n        \"weight\": 2891.8276057015\n    },\n    {\n        \"word\": \"新型\",\n        \"weight\": 2145.02704177336\n    },\n    {\n        \"word\": \"微博\",\n        \"weight\": 2071.89444338168\n    },\n    {\n        \"word\": \"肺炎\",\n        \"weight\": 1979.0608333281\n    },\n    {\n        \"word\": \"2020\",\n        \"weight\": 1786.16925696901\n    },\n    {\n        \"word\": \"有翡\",\n        \"weight\": 1768.23272667894\n    },\n    {\n        \"word\": \"期待\",\n        \"weight\": 1622.94996587646\n    },\n    {\n        \"word\": \"盛明\",\n        \"weight\": 1597.43387778446\n    },\n    {\n        \"word\": \"2018\",\n        \"weight\": 1445.91380285075\n    },\n    {\n        \"word\": \"年颖宝\",\n        \"weight\": 1445.91380285075\n    },\n    {\n        \"word\": \"病毒性\",\n        \"weight\": 1249.91105343397\n    },\n    {\n        \"word\": \"检出\",\n        \"weight\": 1241.25692634073\n    },\n    {\n        \"word\": \"专家组\",\n        \"weight\": 1173.46217393105\n    },\n    {\n        \"word\": \"病毒\",\n        \"weight\": 1159.46019712311\n    },\n    {\n        \"word\": \"阳性\",\n        \"weight\": 1120.23479009413\n    },\n    {\n        \"word\": \"不明\",\n        \"weight\": 1063.68733490913\n    },\n    {\n        \"word\": \"检测\",\n        \"weight\": 886.61984502293\n    },\n    {\n        \"word\": \"荒岛\",\n        \"weight\": 886.191151111479\n    },\n    {\n        \"word\": \"初步\",\n        \"weight\": 652.376168751317\n    },\n    {\n        \"word\": \"刘诗\",\n        \"weight\": 607.5464016844\n    },\n    {\n        \"word\": \"病原体\",\n        \"weight\": 509.633532068837\n    },\n    {\n        \"word\": \"武汉\",\n        \"weight\": 415.463967166494\n    },\n    {\n        \"word\": \"##\",\n        \"weight\": 391.371173381229\n    },\n    {\n        \"word\": \"原因\",\n        \"weight\": 375.242107797556\n    },\n    {\n        \"word\": \"判定\",\n        \"weight\": 332.274066184544\n    },\n    {\n        \"word\": \"周翡\",\n        \"weight\": 322.318923828188\n    },\n    {\n        \"word\": \"zly\",\n        \"weight\": 322.318923828188\n    },\n    {\n        \"word\": \"王一博谢\",\n        \"weight\": 322.318923828188\n    },\n    {\n        \"word\": \"蜜桃\",\n        \"weight\": 278.926001651558\n    },\n    {\n        \"word\": \"乌龙\",\n        \"weight\": 278.926001651558\n    },\n    {\n        \"word\": \"病原\",\n        \"weight\": 252.372183749594\n    },\n    {\n        \"word\": \"电视剧\",\n        \"weight\": 224.963021645626\n    },\n    {\n        \"word\": \"视频\",\n        \"weight\": 207.593723405379\n    },\n    {\n        \"word\": \"首封\",\n        \"weight\": 183.306435044467\n    },\n    {\n        \"word\": \"排除\",\n        \"weight\": 167.135594360054\n    },\n    {\n        \"word\": \"SARS\",\n        \"weight\": 162.834443075215\n    },\n    {\n        \"word\": \"复工\",\n        \"weight\": 156.580905701133\n    }\n]"
+						}
+					]
+				},
+				{
+					"name": "每月微博词频",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://pi.deadpoetspoon.xyz:7800/wbcipin/?month=6&num=50",
+							"protocol": "http",
+							"host": [
+								"pi",
+								"deadpoetspoon",
+								"xyz"
+							],
+							"port": "7800",
+							"path": [
+								"wbcipin",
+								""
+							],
+							"query": [
+								{
+									"key": "month",
+									"value": "6",
+									"description": "微博词频某月的统计结果，取值范围：[1,6]，必要参数"
+								},
+								{
+									"key": "num",
+									"value": "50",
+									"description": "获取结果最大数量。可选参数，默认为200"
+								}
+							]
+						},
+						"description": "每月微博词频"
+					},
+					"response": [
+						{
+							"name": "每月微博词频",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://pi.deadpoetspoon.xyz:7800/wbcipin/?month=6&num=50",
+									"protocol": "http",
+									"host": [
+										"pi",
+										"deadpoetspoon",
+										"xyz"
+									],
+									"port": "7800",
+									"path": [
+										"wbcipin",
+										""
+									],
+									"query": [
+										{
+											"key": "month",
+											"value": "6",
+											"description": "微博词频某月的统计结果，取值范围：[1,6]，必要参数"
+										},
+										{
+											"key": "num",
+											"value": "50",
+											"description": "获取结果最大数量。可选参数，默认为200"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Sun, 14 Jun 2020 13:14:24 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "WSGIServer/0.2 CPython/3.7.3"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept, Cookie, Origin"
+								},
+								{
+									"key": "Allow",
+									"value": "GET, OPTIONS, POST"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Length",
+									"value": "2218"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"word\": \"新冠\",\n        \"weight\": 1169709.62788261\n    },\n    {\n        \"word\": \"抗疫\",\n        \"weight\": 914722.812503107\n    },\n    {\n        \"word\": \"梁小霞\",\n        \"weight\": 692934.05175523\n    },\n    {\n        \"word\": \"微博\",\n        \"weight\": 679793.081496725\n    },\n    {\n        \"word\": \"隔离\",\n        \"weight\": 603715.260960545\n    },\n    {\n        \"word\": \"视频\",\n        \"weight\": 597691.446865715\n    },\n    {\n        \"word\": \"肺炎\",\n        \"weight\": 572451.694009022\n    },\n    {\n        \"word\": \"之子\",\n        \"weight\": 559172.390880591\n    },\n    {\n        \"word\": \"明日\",\n        \"weight\": 469892.94236991\n    },\n    {\n        \"word\": \"##\",\n        \"weight\": 447472.5427077\n    },\n    {\n        \"word\": \"10\",\n        \"weight\": 432148.755849582\n    },\n    {\n        \"word\": \"SUPERBAND\",\n        \"weight\": 424841.966484043\n    },\n    {\n        \"word\": \"我来\",\n        \"weight\": 423627.242611419\n    },\n    {\n        \"word\": \"疫情\",\n        \"weight\": 408396.002494779\n    },\n    {\n        \"word\": \"向往\",\n        \"weight\": 394448.40604122\n    },\n    {\n        \"word\": \"护士\",\n        \"weight\": 359879.852120556\n    },\n    {\n        \"word\": \"确诊\",\n        \"weight\": 348624.319540243\n    },\n    {\n        \"word\": \"病例\",\n        \"weight\": 348363.288461196\n    },\n    {\n        \"word\": \"武汉\",\n        \"weight\": 347622.719077214\n    },\n    {\n        \"word\": \"不幸逝世\",\n        \"weight\": 327320.450035276\n    },\n    {\n        \"word\": \"好消息\",\n        \"weight\": 299280.14902997\n    },\n    {\n        \"word\": \"复工\",\n        \"weight\": 278794.322853727\n    },\n    {\n        \"word\": \"肖战\",\n        \"weight\": 275867.40381727\n    },\n    {\n        \"word\": \"中考\",\n        \"weight\": 267872.411587238\n    },\n    {\n        \"word\": \"一线\",\n        \"weight\": 267821.443791222\n    },\n    {\n        \"word\": \"美国\",\n        \"weight\": 257588.451545162\n    },\n    {\n        \"word\": \"子女\",\n        \"weight\": 245798.290799941\n    },\n    {\n        \"word\": \"广西\",\n        \"weight\": 238618.257461439\n    },\n    {\n        \"word\": \"新增\",\n        \"weight\": 227831.46198261\n    },\n    {\n        \"word\": \"生活\",\n        \"weight\": 227172.358151248\n    },\n    {\n        \"word\": \"综艺\",\n        \"weight\": 224522.105428257\n    },\n    {\n        \"word\": \"死亡\",\n        \"weight\": 224012.767667556\n    },\n    {\n        \"word\": \"谢谢\",\n        \"weight\": 223128.636148314\n    },\n    {\n        \"word\": \"感染者\",\n        \"weight\": 222230.279370077\n    },\n    {\n        \"word\": \"无症状\",\n        \"weight\": 219129.837946133\n    },\n    {\n        \"word\": \"刘凯\",\n        \"weight\": 213024.708479512\n    },\n    {\n        \"word\": \"第一个\",\n        \"weight\": 211565.502655223\n    },\n    {\n        \"word\": \"24\",\n        \"weight\": 209429.396101667\n    },\n    {\n        \"word\": \"钟南山\",\n        \"weight\": 208711.776889413\n    },\n    {\n        \"word\": \"武汉市\",\n        \"weight\": 200691.819473802\n    },\n    {\n        \"word\": \"医务人员\",\n        \"weight\": 194701.912893772\n    },\n    {\n        \"word\": \"结束\",\n        \"weight\": 193226.006859482\n    },\n    {\n        \"word\": \"契约\",\n        \"weight\": 191009.578798715\n    },\n    {\n        \"word\": \"升桥\",\n        \"weight\": 189040.738523357\n    },\n    {\n        \"word\": \"崔娃\",\n        \"weight\": 188286.575120572\n    },\n    {\n        \"word\": \"防控\",\n        \"weight\": 187849.536438539\n    },\n    {\n        \"word\": \"公布\",\n        \"weight\": 180055.365484955\n    },\n    {\n        \"word\": \"执法者\",\n        \"weight\": 169395.054630658\n    },\n    {\n        \"word\": \"傻事\",\n        \"weight\": 168291.135155682\n    },\n    {\n        \"word\": \"VLOG\",\n        \"weight\": 164634.221924421\n    }\n]"
+						}
+					]
+				},
+				{
+					"name": "某地区每日微博词频",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://pi.deadpoetspoon.xyz:7800/wbcipin/?time=2020-05-01&region=湖北&num=50",
+							"protocol": "http",
+							"host": [
+								"pi",
+								"deadpoetspoon",
+								"xyz"
+							],
+							"port": "7800",
+							"path": [
+								"wbcipin",
+								""
+							],
+							"query": [
+								{
+									"key": "time",
+									"value": "2020-05-01",
+									"description": "微博词频每日的统计结果，格式为：yyyy-mm-dd，必要参数"
+								},
+								{
+									"key": "region",
+									"value": "湖北",
+									"description": "微博地区省份及直辖市名,如湖北、北京"
+								},
+								{
+									"key": "num",
+									"value": "50",
+									"description": "获取结果最大数量。可选参数，默认为200"
+								}
+							]
+						},
+						"description": "获取某特定地区的每日微博词频,数据量较大,查询速度较慢"
+					},
+					"response": [
+						{
+							"name": "某地区每日微博词频",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://pi.deadpoetspoon.xyz:7800/wbcipin/?time=2020-05-01&region=湖北&num=50",
+									"protocol": "http",
+									"host": [
+										"pi",
+										"deadpoetspoon",
+										"xyz"
+									],
+									"port": "7800",
+									"path": [
+										"wbcipin",
+										""
+									],
+									"query": [
+										{
+											"key": "time",
+											"value": "2020-05-01",
+											"description": "微博词频每日的统计结果，格式为：yyyy-mm-dd，必要参数"
+										},
+										{
+											"key": "region",
+											"value": "湖北",
+											"description": "微博地区省份及直辖市名,如湖北、北京"
+										},
+										{
+											"key": "num",
+											"value": "50",
+											"description": "获取结果最大数量。可选参数，默认为200"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Sun, 14 Jun 2020 13:12:15 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "WSGIServer/0.2 CPython/3.7.3"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept, Cookie, Origin"
+								},
+								{
+									"key": "Allow",
+									"value": "GET, OPTIONS, POST"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Length",
+									"value": "2217"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"word\": \"抗疫\",\n        \"weight\": 8603.12753499245\n    },\n    {\n        \"word\": \"40\",\n        \"weight\": 6223.23614400964\n    },\n    {\n        \"word\": \"裁掉\",\n        \"weight\": 6223.23614400964\n    },\n    {\n        \"word\": \"医护\",\n        \"weight\": 5581.82500069638\n    },\n    {\n        \"word\": \"被裁\",\n        \"weight\": 4148.82409600643\n    },\n    {\n        \"word\": \"余名\",\n        \"weight\": 3205.72339864515\n    },\n    {\n        \"word\": \"视频\",\n        \"weight\": 3083.95391170239\n    },\n    {\n        \"word\": \"咸阳\",\n        \"weight\": 2869.86419893641\n    },\n    {\n        \"word\": \"辞职书\",\n        \"weight\": 2291.79365701554\n    },\n    {\n        \"word\": \"五一劳动节\",\n        \"weight\": 2291.79365701554\n    },\n    {\n        \"word\": \"孟美岐\",\n        \"weight\": 1028.99554358295\n    },\n    {\n        \"word\": \"围城\",\n        \"weight\": 588.212381557468\n    },\n    {\n        \"word\": \"复工\",\n        \"weight\": 537.573874824296\n    },\n    {\n        \"word\": \"76\",\n        \"weight\": 533.041986305776\n    },\n    {\n        \"word\": \"脉搏\",\n        \"weight\": 408.238535699787\n    },\n    {\n        \"word\": \"蓝色\",\n        \"weight\": 338.055048822255\n    },\n    {\n        \"word\": \"辗转不安\",\n        \"weight\": 309.90334294753\n    },\n    {\n        \"word\": \"亿人\",\n        \"weight\": 266.520993152889\n    },\n    {\n        \"word\": \"这头\",\n        \"weight\": 266.520993152889\n    },\n    {\n        \"word\": \"之桥\",\n        \"weight\": 266.520993152889\n    },\n    {\n        \"word\": \"......\",\n        \"weight\": 266.520993152889\n    },\n    {\n        \"word\": \"微博\",\n        \"weight\": 261.650814825266\n    },\n    {\n        \"word\": \"mmq\",\n        \"weight\": 257.248885895737\n    },\n    {\n        \"word\": \"紅色\",\n        \"weight\": 257.248885895737\n    },\n    {\n        \"word\": \"公屏\",\n        \"weight\": 257.248885895737\n    },\n    {\n        \"word\": \"山支\",\n        \"weight\": 257.248885895737\n    },\n    {\n        \"word\": \"孟美岐创\",\n        \"weight\": 257.248885895737\n    },\n    {\n        \"word\": \"创一创\",\n        \"weight\": 257.248885895737\n    },\n    {\n        \"word\": \"101\",\n        \"weight\": 257.248885895737\n    },\n    {\n        \"word\": \"一千万\",\n        \"weight\": 237.266955423883\n    },\n    {\n        \"word\": \"酒店\",\n        \"weight\": 233.383212068666\n    },\n    {\n        \"word\": \"皮衣\",\n        \"weight\": 226.662771799334\n    },\n    {\n        \"word\": \"复课\",\n        \"weight\": 197.846440598991\n    },\n    {\n        \"word\": \"留学生\",\n        \"weight\": 196.501966098707\n    },\n    {\n        \"word\": \"程安子\",\n        \"weight\": 192.023453015331\n    },\n    {\n        \"word\": \"艾薇儿\",\n        \"weight\": 189.733729400865\n    },\n    {\n        \"word\": \"武汉\",\n        \"weight\": 170.720922091599\n    },\n    {\n        \"word\": \"行李\",\n        \"weight\": 169.567430782388\n    },\n    {\n        \"word\": \"检测\",\n        \"weight\": 162.51780449756\n    },\n    {\n        \"word\": \"23\",\n        \"weight\": 156.951162006158\n    },\n    {\n        \"word\": \"年级\",\n        \"weight\": 154.013133180088\n    },\n    {\n        \"word\": \"##\",\n        \"weight\": 153.974235612635\n    },\n    {\n        \"word\": \"高三\",\n        \"weight\": 151.29626245148\n    },\n    {\n        \"word\": \"疫情\",\n        \"weight\": 150.148781996585\n    },\n    {\n        \"word\": \"致敬\",\n        \"weight\": 147.144454872949\n    },\n    {\n        \"word\": \"开学\",\n        \"weight\": 143.556738127373\n    },\n    {\n        \"word\": \"核酸\",\n        \"weight\": 142.688546150078\n    },\n    {\n        \"word\": \"公益\",\n        \"weight\": 138.112027915785\n    },\n    {\n        \"word\": \"学生\",\n        \"weight\": 136.67211177696\n    },\n    {\n        \"word\": \"销毁\",\n        \"weight\": 134.565562259421\n    }\n]"
+						}
+					]
+				},
+				{
+					"name": "某地区每周微博词频",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://pi.deadpoetspoon.xyz:7800/wbcipin/?week=5&region=湖北&num=50",
+							"protocol": "http",
+							"host": [
+								"pi",
+								"deadpoetspoon",
+								"xyz"
+							],
+							"port": "7800",
+							"path": [
+								"wbcipin",
+								""
+							],
+							"query": [
+								{
+									"key": "week",
+									"value": "5",
+									"description": "微博词频某周的统计结果，取值范围：[1,23]，必要参数"
+								},
+								{
+									"key": "region",
+									"value": "湖北",
+									"description": "微博地区省份及直辖市名,如湖北、北京"
+								},
+								{
+									"key": "num",
+									"value": "50",
+									"description": "获取结果最大数量。可选参数，默认为200"
+								}
+							]
+						},
+						"description": "获取某特定地区的每周微博词频,数据量较大,查询速度较慢"
+					},
+					"response": [
+						{
+							"name": "某地区每周微博词频",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://pi.deadpoetspoon.xyz:7800/wbcipin/?week=5&region=湖北&num=50",
+									"protocol": "http",
+									"host": [
+										"pi",
+										"deadpoetspoon",
+										"xyz"
+									],
+									"port": "7800",
+									"path": [
+										"wbcipin",
+										""
+									],
+									"query": [
+										{
+											"key": "week",
+											"value": "5",
+											"description": "微博词频某周的统计结果，取值范围：[1,23]，必要参数"
+										},
+										{
+											"key": "region",
+											"value": "湖北",
+											"description": "微博地区省份及直辖市名,如湖北、北京"
+										},
+										{
+											"key": "num",
+											"value": "50",
+											"description": "获取结果最大数量。可选参数，默认为200"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Sun, 14 Jun 2020 13:13:26 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "WSGIServer/0.2 CPython/3.7.3"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept, Cookie, Origin"
+								},
+								{
+									"key": "Allow",
+									"value": "GET, OPTIONS, POST"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Length",
+									"value": "2237"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"word\": \"##\",\n        \"weight\": 243687.900627622\n    },\n    {\n        \"word\": \"11\",\n        \"weight\": 162347.512678603\n    },\n    {\n        \"word\": \"转阴\",\n        \"weight\": 144523.573672716\n    },\n    {\n        \"word\": \"核酸\",\n        \"weight\": 143293.188898569\n    },\n    {\n        \"word\": \"新型\",\n        \"weight\": 142479.054304926\n    },\n    {\n        \"word\": \"医护人员\",\n        \"weight\": 130358.919965801\n    },\n    {\n        \"word\": \"肺炎\",\n        \"weight\": 120635.309428265\n    },\n    {\n        \"word\": \"抗击\",\n        \"weight\": 107146.57363212\n    },\n    {\n        \"word\": \"武汉\",\n        \"weight\": 93714.1416065498\n    },\n    {\n        \"word\": \"我院\",\n        \"weight\": 89394.7572603437\n    },\n    {\n        \"word\": \"ct\",\n        \"weight\": 37793.1389461427\n    },\n    {\n        \"word\": \"小朋友\",\n        \"weight\": 30948.9427308433\n    },\n    {\n        \"word\": \"光谷\",\n        \"weight\": 26012.7253186707\n    },\n    {\n        \"word\": \"感染\",\n        \"weight\": 22016.0426839423\n    },\n    {\n        \"word\": \"同济\",\n        \"weight\": 21835.2611509258\n    },\n    {\n        \"word\": \"收治\",\n        \"weight\": 21522.0083028011\n    },\n    {\n        \"word\": \"肺部\",\n        \"weight\": 19664.885859586\n    },\n    {\n        \"word\": \"隔离\",\n        \"weight\": 17865.3121039262\n    },\n    {\n        \"word\": \"确诊\",\n        \"weight\": 17077.4138814436\n    },\n    {\n        \"word\": \"遗体\",\n        \"weight\": 15368.3875225648\n    },\n    {\n        \"word\": \"消毒\",\n        \"weight\": 11252.8600007627\n    },\n    {\n        \"word\": \"防疫\",\n        \"weight\": 8999.78114518117\n    },\n    {\n        \"word\": \"疑似病例\",\n        \"weight\": 8794.98543240474\n    },\n    {\n        \"word\": \"黄冈\",\n        \"weight\": 8575.04805084413\n    },\n    {\n        \"word\": \"上门\",\n        \"weight\": 7601.52780333082\n    },\n    {\n        \"word\": \"热线\",\n        \"weight\": 7436.92970256754\n    },\n    {\n        \"word\": \"处理\",\n        \"weight\": 7327.30057037237\n    },\n    {\n        \"word\": \"黄冈市\",\n        \"weight\": 7205.94305806253\n    },\n    {\n        \"word\": \"部门\",\n        \"weight\": 6981.57267138309\n    },\n    {\n        \"word\": \"社区\",\n        \"weight\": 6910.47099562307\n    },\n    {\n        \"word\": \"卫健委\",\n        \"weight\": 6527.72465959463\n    },\n    {\n        \"word\": \"督查组\",\n        \"weight\": 5881.2598581087\n    },\n    {\n        \"word\": \"一问三不知\",\n        \"weight\": 5746.4682598992\n    },\n    {\n        \"word\": \"文件\",\n        \"weight\": 5562.77055916211\n    },\n    {\n        \"word\": \"冠状病毒\",\n        \"weight\": 4656.259085983\n    },\n    {\n        \"word\": \"要么\",\n        \"weight\": 4230.82352855463\n    },\n    {\n        \"word\": \"视频\",\n        \"weight\": 4034.43681454117\n    },\n    {\n        \"word\": \"派出\",\n        \"weight\": 3633.49005684158\n    },\n    {\n        \"word\": \"检测\",\n        \"weight\": 3518.43592967049\n    },\n    {\n        \"word\": \"指导组\",\n        \"weight\": 3218.37647711125\n    },\n    {\n        \"word\": \"封城\",\n        \"weight\": 3165.09872309154\n    },\n    {\n        \"word\": \"试剂盒\",\n        \"weight\": 2286.98309884998\n    },\n    {\n        \"word\": \"如初\",\n        \"weight\": 1321.95475853438\n    },\n    {\n        \"word\": \"检验\",\n        \"weight\": 1129.74154317235\n    },\n    {\n        \"word\": \"校园\",\n        \"weight\": 1118.95865081306\n    },\n    {\n        \"word\": \"宁静\",\n        \"weight\": 1088.7024206205\n    },\n    {\n        \"word\": \"2019\",\n        \"weight\": 1057.10461997903\n    },\n    {\n        \"word\": \"研制\",\n        \"weight\": 990.948970786649\n    },\n    {\n        \"word\": \"华中科技大学\",\n        \"weight\": 938.286469068193\n    },\n    {\n        \"word\": \"青蜂\",\n        \"weight\": 923.402731258484\n    }\n]"
+						}
+					]
+				},
+				{
+					"name": "某地区每月微博词频",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://pi.deadpoetspoon.xyz:7800/wbcipin/?month=6&region=湖北&num=50",
+							"protocol": "http",
+							"host": [
+								"pi",
+								"deadpoetspoon",
+								"xyz"
+							],
+							"port": "7800",
+							"path": [
+								"wbcipin",
+								""
+							],
+							"query": [
+								{
+									"key": "month",
+									"value": "6",
+									"description": "获取结果最大数量。可选参数，默认为200"
+								},
+								{
+									"key": "region",
+									"value": "湖北",
+									"description": "微博地区省份及直辖市名,如湖北、北京"
+								},
+								{
+									"key": "num",
+									"value": "50",
+									"description": "获取结果最大数量。可选参数，默认为200"
+								}
+							]
+						},
+						"description": "获取某特定地区的每月微博词频,数据量较大,查询速度较慢"
+					},
+					"response": [
+						{
+							"name": "某地区每月微博词频",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://pi.deadpoetspoon.xyz:7800/wbcipin/?month=6&region=湖北&num=50",
+									"protocol": "http",
+									"host": [
+										"pi",
+										"deadpoetspoon",
+										"xyz"
+									],
+									"port": "7800",
+									"path": [
+										"wbcipin",
+										""
+									],
+									"query": [
+										{
+											"key": "month",
+											"value": "6",
+											"description": "获取结果最大数量。可选参数，默认为200"
+										},
+										{
+											"key": "region",
+											"value": "湖北",
+											"description": "微博地区省份及直辖市名,如湖北、北京"
+										},
+										{
+											"key": "num",
+											"value": "50",
+											"description": "获取结果最大数量。可选参数，默认为200"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Sun, 14 Jun 2020 13:12:51 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "WSGIServer/0.2 CPython/3.7.3"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept, Cookie, Origin"
+								},
+								{
+									"key": "Allow",
+									"value": "GET, OPTIONS, POST"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Length",
+									"value": "2216"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"word\": \"iPhone\",\n        \"weight\": 115129.392206053\n    },\n    {\n        \"word\": \"抗疫\",\n        \"weight\": 73588.030550676\n    },\n    {\n        \"word\": \"老板\",\n        \"weight\": 69914.4599970576\n    },\n    {\n        \"word\": \"员工\",\n        \"weight\": 55120.2956052864\n    },\n    {\n        \"word\": \"10\",\n        \"weight\": 49829.0073664983\n    },\n    {\n        \"word\": \"中考\",\n        \"weight\": 43567.2119898076\n    },\n    {\n        \"word\": \"医护\",\n        \"weight\": 43490.8327201219\n    },\n    {\n        \"word\": \"支持\",\n        \"weight\": 41174.1467751344\n    },\n    {\n        \"word\": \"武汉\",\n        \"weight\": 40921.8939756161\n    },\n    {\n        \"word\": \"加分\",\n        \"weight\": 40503.4396665021\n    },\n    {\n        \"word\": \"饭店\",\n        \"weight\": 37625.5704806067\n    },\n    {\n        \"word\": \"倒闭\",\n        \"weight\": 37506.6704066915\n    },\n    {\n        \"word\": \"爱国\",\n        \"weight\": 37107.3064094767\n    },\n    {\n        \"word\": \"奖励\",\n        \"weight\": 36481.5528901028\n    },\n    {\n        \"word\": \"手机\",\n        \"weight\": 32109.5030990276\n    },\n    {\n        \"word\": \"子女\",\n        \"weight\": 31196.5555328405\n    },\n    {\n        \"word\": \"做个\",\n        \"weight\": 30869.5584828955\n    },\n    {\n        \"word\": \"各发\",\n        \"weight\": 30822.3059106201\n    },\n    {\n        \"word\": \"优秀员工\",\n        \"weight\": 30129.6813544346\n    },\n    {\n        \"word\": \"少数民族\",\n        \"weight\": 27516.4807707384\n    },\n    {\n        \"word\": \"护士\",\n        \"weight\": 15099.504643464\n    },\n    {\n        \"word\": \"微博\",\n        \"weight\": 13814.8324064234\n    },\n    {\n        \"word\": \"小霞\",\n        \"weight\": 12663.7371930719\n    },\n    {\n        \"word\": \"曾援汉\",\n        \"weight\": 12663.7371930719\n    },\n    {\n        \"word\": \"隔离\",\n        \"weight\": 11438.9552638745\n    },\n    {\n        \"word\": \"痛惜\",\n        \"weight\": 10844.221494144\n    },\n    {\n        \"word\": \"本片\",\n        \"weight\": 10774.8840134649\n    },\n    {\n        \"word\": \"晕倒\",\n        \"weight\": 10361.6937415933\n    },\n    {\n        \"word\": \"沙雕\",\n        \"weight\": 10340.8738900085\n    },\n    {\n        \"word\": \"鄂电\",\n        \"weight\": 9252.13517948204\n    },\n    {\n        \"word\": \"国网\",\n        \"weight\": 8425.88878102775\n    },\n    {\n        \"word\": \"非正式\",\n        \"weight\": 7925.29803366493\n    },\n    {\n        \"word\": \"一线\",\n        \"weight\": 7610.98569341119\n    },\n    {\n        \"word\": \"会谈\",\n        \"weight\": 7488.7950005358\n    },\n    {\n        \"word\": \"新冠\",\n        \"weight\": 6917.85481330819\n    },\n    {\n        \"word\": \"梁小霞\",\n        \"weight\": 6355.30044237086\n    },\n    {\n        \"word\": \"人会\",\n        \"weight\": 6331.86859653599\n    },\n    {\n        \"word\": \"26\",\n        \"weight\": 5959.57260733878\n    },\n    {\n        \"word\": \"苹果\",\n        \"weight\": 5837.33631501839\n    },\n    {\n        \"word\": \"拼了命\",\n        \"weight\": 5831.63245225766\n    },\n    {\n        \"word\": \"疫情\",\n        \"weight\": 5430.33668998323\n    },\n    {\n        \"word\": \"之屋\",\n        \"weight\": 5212.88927765235\n    },\n    {\n        \"word\": \"视频\",\n        \"weight\": 5204.92125220539\n    },\n    {\n        \"word\": \"COVIVID\",\n        \"weight\": 5146.52740999846\n    },\n    {\n        \"word\": \"过大而\",\n        \"weight\": 5146.52740999846\n    },\n    {\n        \"word\": \"抓马\",\n        \"weight\": 5146.52740999846\n    },\n    {\n        \"word\": \"小哥\",\n        \"weight\": 5038.33654861531\n    },\n    {\n        \"word\": \"冤呀\",\n        \"weight\": 4631.14409987343\n    },\n    {\n        \"word\": \"苏渝\",\n        \"weight\": 4631.14409987343\n    },\n    {\n        \"word\": \"复工\",\n        \"weight\": 4272.8708715255\n    }\n]"
+						}
+					]
+				},
+				{
+					"name": "某地区微博词频",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://pi.deadpoetspoon.xyz:7800/wbcipin/?region=湖北&num=50",
+							"protocol": "http",
+							"host": [
+								"pi",
+								"deadpoetspoon",
+								"xyz"
+							],
+							"port": "7800",
+							"path": [
+								"wbcipin",
+								""
+							],
+							"query": [
+								{
+									"key": "region",
+									"value": "湖北",
+									"description": "微博地区省份及直辖市名,如湖北、北京"
+								},
+								{
+									"key": "num",
+									"value": "50",
+									"description": "获取结果最大数量。可选参数，默认为200"
+								}
+							]
+						},
+						"description": "获取某地区12月27日至6月1日的关键词词频,数据量较大,查询速度较慢"
+					},
+					"response": [
+						{
+							"name": "某地区微博词频",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://pi.deadpoetspoon.xyz:7800/wbcipin/?region=湖北&num=50",
+									"protocol": "http",
+									"host": [
+										"pi",
+										"deadpoetspoon",
+										"xyz"
+									],
+									"port": "7800",
+									"path": [
+										"wbcipin",
+										""
+									],
+									"query": [
+										{
+											"key": "region",
+											"value": "湖北",
+											"description": "微博地区省份及直辖市名,如湖北、北京"
+										},
+										{
+											"key": "num",
+											"value": "50",
+											"description": "获取结果最大数量。可选参数，默认为200"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Sun, 14 Jun 2020 13:13:03 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "WSGIServer/0.2 CPython/3.7.3"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept, Cookie, Origin"
+								},
+								{
+									"key": "Allow",
+									"value": "GET, OPTIONS, POST"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Length",
+									"value": "2219"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"word\": \"核酸\",\n        \"weight\": 4706413.84232616\n    },\n    {\n        \"word\": \"尘埃落定\",\n        \"weight\": 4447790.83256896\n    },\n    {\n        \"word\": \"阳性\",\n        \"weight\": 4109948.70447501\n    },\n    {\n        \"word\": \"确诊\",\n        \"weight\": 3989916.57682057\n    },\n    {\n        \"word\": \"检测\",\n        \"weight\": 3455734.79670913\n    },\n    {\n        \"word\": \"终于\",\n        \"weight\": 2588639.02398257\n    },\n    {\n        \"word\": \"今天\",\n        \"weight\": 2425078.07522265\n    },\n    {\n        \"word\": \"结果\",\n        \"weight\": 2390651.41713859\n    },\n    {\n        \"word\": \"微博\",\n        \"weight\": 908683.514568618\n    },\n    {\n        \"word\": \"中国青年报\",\n        \"weight\": 875166.570407603\n    },\n    {\n        \"word\": \"武汉\",\n        \"weight\": 737978.408883932\n    },\n    {\n        \"word\": \"##\",\n        \"weight\": 685509.109896229\n    },\n    {\n        \"word\": \"因有\",\n        \"weight\": 536237.140699819\n    },\n    {\n        \"word\": \"度外\",\n        \"weight\": 536119.233875231\n    },\n    {\n        \"word\": \"共筑\",\n        \"weight\": 536119.233875231\n    },\n    {\n        \"word\": \"身边\",\n        \"weight\": 522664.116989929\n    },\n    {\n        \"word\": \"共青团中央\",\n        \"weight\": 496536.317052663\n    },\n    {\n        \"word\": \"我们\",\n        \"weight\": 478712.843703413\n    },\n    {\n        \"word\": \"抗疫\",\n        \"weight\": 472864.577227088\n    },\n    {\n        \"word\": \"致敬\",\n        \"weight\": 458535.67646055\n    },\n    {\n        \"word\": \"封城\",\n        \"weight\": 453767.458080323\n    },\n    {\n        \"word\": \"置身\",\n        \"weight\": 438300.830797575\n    },\n    {\n        \"word\": \"新冠\",\n        \"weight\": 402466.751316771\n    },\n    {\n        \"word\": \"隔离\",\n        \"weight\": 327035.020242376\n    },\n    {\n        \"word\": \"肺炎\",\n        \"weight\": 316995.387840973\n    },\n    {\n        \"word\": \"谩骂\",\n        \"weight\": 255799.059555479\n    },\n    {\n        \"word\": \"视频\",\n        \"weight\": 237216.868892729\n    },\n    {\n        \"word\": \"王智\",\n        \"weight\": 211722.824726244\n    },\n    {\n        \"word\": \"方方\",\n        \"weight\": 199119.392474159\n    },\n    {\n        \"word\": \"11\",\n        \"weight\": 174799.321213698\n    },\n    {\n        \"word\": \"转阴\",\n        \"weight\": 174110.471420047\n    },\n    {\n        \"word\": \"疫情\",\n        \"weight\": 171018.323523937\n    },\n    {\n        \"word\": \"社区\",\n        \"weight\": 153155.342374911\n    },\n    {\n        \"word\": \"杨洋\",\n        \"weight\": 149242.941646373\n    },\n    {\n        \"word\": \"徐坤\",\n        \"weight\": 145598.628108706\n    },\n    {\n        \"word\": \"新型\",\n        \"weight\": 145358.040219116\n    },\n    {\n        \"word\": \"医护人员\",\n        \"weight\": 141306.999894157\n    },\n    {\n        \"word\": \"后盾\",\n        \"weight\": 137638.255123664\n    },\n    {\n        \"word\": \"护士\",\n        \"weight\": 137073.652162687\n    },\n    {\n        \"word\": \"救治\",\n        \"weight\": 128997.996640934\n    },\n    {\n        \"word\": \"邻座\",\n        \"weight\": 128049.283572131\n    },\n    {\n        \"word\": \"复工\",\n        \"weight\": 120494.451110205\n    },\n    {\n        \"word\": \"外国人\",\n        \"weight\": 119686.978188189\n    },\n    {\n        \"word\": \"失去\",\n        \"weight\": 116857.408806596\n    },\n    {\n        \"word\": \"低端\",\n        \"weight\": 116539.216931283\n    },\n    {\n        \"word\": \"醒来\",\n        \"weight\": 116233.795261673\n    },\n    {\n        \"word\": \"湖北\",\n        \"weight\": 115742.040786136\n    },\n    {\n        \"word\": \"iPhone\",\n        \"weight\": 115129.392206053\n    },\n    {\n        \"word\": \"抗击\",\n        \"weight\": 113230.493373552\n    },\n    {\n        \"word\": \"28\",\n        \"weight\": 104707.1371594\n    }\n]"
+						}
+					]
+				}
+			],
+			"description": "按地区及时间获取对应条件下热门微博关键词词频统计",
 			"protocolProfileBehavior": {}
 		}
 	],

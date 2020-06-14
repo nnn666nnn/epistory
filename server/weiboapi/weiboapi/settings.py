@@ -41,6 +41,8 @@ INSTALLED_APPS = [
     'rest_framework',
     'resou.apps.ResouConfig',
     'yiqing.apps.yiqingConfig',
+    'rscipin.apps.RscipinConfig',
+    'wbcipin.apps.WbcipinConfig',
 ]
 
 MIDDLEWARE = [

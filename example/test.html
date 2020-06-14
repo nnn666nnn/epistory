@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+    <title>天地图－地图API－范例－经纬度直投地图</title>
+    <script type="text/javascript" src="http://api.tianditu.gov.cn/api?v=4.0&tk=709e88b9fe5cb1feaff7f7796a936526"></script>
+    <style type="text/css">body,html{width:100%;height:100%;margin:0;font-family:"Microsoft YaHei"}#mapDiv{width:100%;height:100%}input,b,p{margin-left:5px;font-size:14px}</style>
+    <script>
+        var map;
+        var zoom = 4;
+        function onLoad() {
+            map = new T.Map('mapDiv', {
+                projection: 'EPSG:4326'
+            });
+            map.centerAndZoom(new T.LngLat(114.31667, 30.51667), zoom);
+        }
+    </script>
+
+</head>
+<body onLoad="onLoad()">
+<div id="mapDiv"></div>
+<div id="map-canvas"></div>
+<script src=" http://api.tianditu.gov.cn/api?v=4.0&amp;tk=709e88b9fe5cb1feaff7f7796a936526" type="text/javascript"></script>
+<script src="http://cdn.bootcss.com/d3/3.5.17/d3.js " charset="utf-8"></script>
+<script src="http://lbs.tianditu.gov.cn/api/js4.0/opensource/openlibrary/D3SvgOverlay.js"></script>
+<script>
+    var countries = [];
+    var countriesOverlay = new T.D3Overlay(init,redraw);
+    var countriesOverlay1 = new T.D3Overlay(init1,redraw1);
+
+    var map = new T.Map("map-canvas");
+    map.centerAndZoom(new T.LngLat(116.39769, 40.25945), 9)
+
+    d3.json("http://epistory.deadpoetspoon.xyz/china.json", function (data) {
+        countries = data.features;
+        map.addOverLay(countriesOverlay)
+        countriesOverlay.bringToBack();
+        map.addOverLay(countriesOverlay1)
+        countriesOverlay.bringToBack();
+    });
+
+    function init(sel, transform) {
+        var upd = sel.selectAll('path.geojson').data(countries);
+        upd.enter()
+                .append('path')
+                .attr("class", "geojson")
+                .attr('stroke', 'black')
+                .attr('fill', function (d, i) {
+					console.log(d['adcode'])
+					
+                    return d3.hsl(Math.random() * 360, 0.9, 0.5)
+                })
+                .attr('fill-opacity', '0.5')
+
+
+    }
+
+    function redraw(sel, transform) {
+        sel.selectAll('path.geojson').each(
+                function (d, i) {
+                    d3.select(this).attr('d', transform.pathFromGeojson)
+                }
+        )
+
+    }
+
+
+    function init1(sel, transform) {
+        var upd = sel.selectAll('path.geojson1').data(countries);
+        upd.enter()
+            .append('path')
+            .attr("class", "geojson1")
+            .attr('stroke', 'black')
+            .attr('fill', function (d, i) {
+                return d3.hsl(Math.random() * 360, 0.9, 0.5)
+            })
+            .attr('fill-opacity', '0.5')
+
+
+    }
+
+    function redraw1(sel, transform) {
+        sel.selectAll('path.geojson1').each(
+            function (d, i) {
+                d3.select(this).attr('d', transform.pathFromGeojson)
+            }
+        )
+
+    }
+
+</script>
+</body>
+</html>
