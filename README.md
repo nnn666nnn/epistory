@@ -1,9 +1,9 @@
 # WebGISWhu
 Web GIS course project
 
->--Zhang kaishuo test<br>
->       --Wei Mingjie test<br>
->       --He Jiangning test<br>
+>--Zhang kaishuo <br>
+>       --Wei Mingjie <br>
+>       --He Jiangning <br>
 >       --Tan Junyi<br>
 
 Web Home Page: [微博战疫](http://epistory.deadpoetspoon.xyz)
