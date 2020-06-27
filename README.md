@@ -1,19 +1,19 @@
-# WebGISWhu
-Web GIS course project [epistory](https://github.com/DeadPoetSpoon/epistory)
->--Zhang kaishuo <br>
->       --Wei Mingjie <br>
->       --He Jiangning <br>
->       --Tan Junyi<br>
+# WebGIS
+Web GIS 课程项目 [epistory](https://github.com/DeadPoetSpoon/epistory)
+>--张开硕 <br>
+>--韦明杰 <br>
+>--何江宁 <br>
+>--谭骏翊<br>
 
-Web Home Page: [微博战疫](http://epistory.deadpoetspoon.xyz)
+主页: [微博战疫](http://epistory.deadpoetspoon.xyz)
 
-API Documentation: [weiboapi](https://documenter.getpostman.com/view/11433628/SztK1jaN?version=latest)
+API文档: [weiboapi](https://documenter.getpostman.com/view/11433628/SztK1jaN?version=latest)
 
-Thanks:
+感谢:
 
 > 1. 爬虫项目: [weibo-search](https://github.com/dataabc/weibo-search)
 >
-> 2. [Mao Yujun](https://github.com/YujunMao)
+> 2. [毛玉君](https://github.com/YujunMao)
 >
 > 3. 疫情数据来源：[Wuhan-2019-nCoV](https://github.com/canghailan/Wuhan-2019-nCoV)
 
