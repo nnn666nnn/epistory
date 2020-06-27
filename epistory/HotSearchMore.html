@@ -1,0 +1,2257 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>微博热搜</title>
+    <!-- 引入 echarts.js -->
+    <script src="https://cdn.staticfile.org/echarts/4.3.0/echarts.min.js"></script>
+    <link rel="stylesheet" href="//cdn.bootcss.com/bootstrap/3.3.4/css/bootstrap.min.css">
+    <script src="//cdn.bootcss.com/jquery/1.11.2/jquery.min.js"></script>
+    <script src="//cdn.bootcss.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <div class="row clearfix">
+            <div class="col-md-12 column">
+                <div class="tabbable" id="tabs-556261">
+                    <ul class="nav nav-tabs">
+                        <li class="active">
+                            <a href="#panel-685839" data-toggle="tab">搜索单日热搜</a>
+                        </li>
+                        <li>
+                            <a href="#panel-393341" data-toggle="tab">搜索一段日期内的热搜</a>
+                        </li>
+                        <li>
+                            <a href="#panel-666666" data-toggle="tab">搜索整个疫情期间某个关键词的微博热搜</a>
+                        </li>
+                    </ul>
+                    <div class="tab-content">
+                        <div class="tab-pane active" id="panel-685839">
+                            <p>
+                                <div id="a" style="height:70px;width:1300px;">
+                                    <!-- <p>搜索单日热搜（默认显示50条热搜）</p> -->
+                                    <div id="left1" style="width:250px;float:left;" class="form-inline">
+                                        <p>选择日期（默认显示50条热搜）</p>
+                                        <input type="date" id="Date" value="2020-01-23" class="form-control">
+                                        <button onclick="changeDate()"class="form-control">确定</button>
+                                    </div>
+                                    <div id="right1" style="width:270px;float:left;" class="form-inline">
+                                        <p>输入想看的热搜数量</p>
+                                        <input type='text' id='Num' value="" class="form-control" placeholder="50"
+                                            onfocus="this.placeholder=''" onblur="this.placeholder='50'" type="text">
+                                        <button onclick="changeNum()"class="form-control">确定</button>
+                                    </div>
+                                    <div id="more1" style="width:270px;float:left;" class="form-inline">
+                                        <p>搜索关键词</p>
+                                        <input type="text" id="Keyword2" value="" class="form-control" placeholder="钟南山"
+                                            onfocus="this.placeholder=''" onblur="this.placeholder='钟南山'" type="text">
+                                        <button onclick="keyWord2()"class="form-control">确定</button>
+                                    </div>
+                                    <div id="more2" style="width:500px;float:left;" class="form-inline">
+                                        <p>选择热搜排列顺序（微博置顶热搜的热度和单日最高热搜排名均显示为0）</p>
+                                        <select name="order1" id="order1" class="form-control">
+                                            <option value="d">降序</option>
+                                            <option value="a">升序</option>
+                                        </select>
+                                        <button onclick="order1()"class="form-control">确定</button>
+                                    </div>
+                                </div>
+                            </p>
+                        </div>
+                        <div class="tab-pane" id="panel-393341">
+                            <p>
+                                <div id="b" style="height:70px;width:1510px;">
+                                    <!-- <p>搜索一段日期内的热搜</p> -->
+                                    <div id="left2" style="width:180px;float:left;" class="form-inline">
+                                        <p>选择起始日期</p>
+                                        <input type="date" id="Date1" value="2019-12-27" class="form-control">
+                                    </div>
+                                    <div id="right2" style="width:250px;float:left;" class="form-inline">
+                                        <p>选择结束日期</p>
+                                        <input type="date" id="Date2" value="2020-06-01" class="form-control">
+                                        <button onclick="changeDates()"class="form-control">确定</button>
+                                    </div>
+                                    <div id="below" style="width:280px;float:left;" class="form-inline">
+                                        <p>输入想看的热搜数量</p>
+                                        <input type='text' id='Num2' value="" class="form-control" placeholder="50"
+                                            onfocus="this.placeholder=''" onblur="this.placeholder='50'" type="text">
+                                        <button onclick="changeNum2()"class="form-control">确定</button>
+                                    </div>
+                                    <div id="more3" style="width:280px;float:left;" class="form-inline">
+                                        <p>搜索关键词</p>
+                                        <input type="text" id="Keyword3" value="" placeholder="钟南山" class="form-control"
+                                            onfocus="this.placeholder=''" onblur="this.placeholder='钟南山'" type="text">
+                                        <button onclick="keyWord3()"class="form-control">确定</button>
+                                    </div>
+                                    <div id="more4" style="width:520px;float:left;" class="form-inline">
+                                        <p>选择热搜排列顺序（微博置顶热搜的热度和单日最高热搜排名均显示为0）</p>
+                                        <select name="order2" id="order2" class="form-control">
+                                            <option value="d">降序</option>
+                                            <option value="a">升序</option>
+                                        </select>
+                                        <button onclick="order2()"class="form-control">确定</button>
+                                    </div>
+                                </div>
+                            </p>
+                        </div>
+                        <div class="tab-pane keyword" id="panel-666666">
+                            <p>
+                                <div id="c" style="height:70px;width:850px;">
+                                    <!-- <p>整个疫情期间某关键词的微博热搜</p> -->
+                                    <div id="left3" style="width:290px;float:left;" class="form-inline">
+                                        <p>输入关键词</p>
+                                        <input type='text' id='Keyword' value="" class="form-control" placeholder="钟南山"
+                                            onfocus="this.placeholder=''" onblur="this.placeholder='钟南山'" type="text">
+                                        <button onclick="keyWord()"class="form-control">确定</button>
+                                    </div>
+                                    <div id="right3" style="width:290px;float:left;" class="form-inline">
+                                        <p>输入想看的热搜数量</p>
+                                        <input type='text' id='Num3' value="" placeholder="50" class="form-control"
+                                            onfocus="this.placeholder=''" onblur="this.placeholder='50'" type="text">
+                                        <button onclick="changeNum3()"class="form-control">确定</button>
+                                    </div>
+                                    <div id="more5" style="width:190px;float:left;" class="form-inline">
+                                        <p>选择热搜排列顺序</p>
+                                        <select name="order3" id="order3" class="form-control">
+                                            <option value="d">降序</option>
+                                            <option value="a">升序</option>
+                                        </select>
+                                        <button onclick="order3()"class="form-control">确定</button>
+                                    </div>
+                                </div>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- 为 ECharts 准备一个具备大小（宽高）的 DOM -->
+    <div id="main" style="width: 1100px;height:1000px;"></div>
+
+    <script type="text/javascript">
+        // 获取json中元素下标
+        //  arr: 传入的数组
+        //  obj: 需要获取下标的元素
+        function getArrayIndex(arr, obj) {
+            var i = arr.length;
+            //当i为0时，循环会跳出
+            while (i--) {
+                if (arr[i] === obj) {
+                    return i
+                }
+            }
+            return -1
+        }
+
+        //改变日期
+        function changeDate() {
+            var time = document.getElementById("Date").value;
+            var order = document.getElementById('order1').value;
+            var num = document.getElementById('Num').value;
+            var Keyword = document.getElementById('Keyword2').value;
+            //构造变量
+            var keyword = new Array(); //热搜
+            var searchNum = new Array(); //搜索数
+            var link = new Array(); //热搜链接
+            var rank = new Array(); //最高排名
+
+            if (num == 0 && Keyword == 0) {
+                var url = "http://pi.deadpoetspoon.xyz:7800/resou/?datacode=lkrs&time=" + time + "\&num=50&sortcode=s" +
+                    order;
+            } else if (num == 0 && Keyword != 0) {
+                var url = "http://pi.deadpoetspoon.xyz:7800/resou/?datacode=lkrs&time=" + time + "\&num=50&sortcode=s" +
+                    order + "&keyword=" + Keyword;
+            } else if (num != 0 && Keyword == 0) {
+                var url = "http://pi.deadpoetspoon.xyz:7800/resou/?datacode=lkrs&time=" + time + "\&num=" + num +
+                    "&sortcode=s" + order;
+            } else {
+                var url = "http://pi.deadpoetspoon.xyz:7800/resou/?datacode=lkrs&time=" + time + "\&num=" + num +
+                    "&sortcode=s" +
+                    order + "&keyword=" + Keyword;
+            }
+
+            // 基于准备好的dom，初始化echarts实例
+            document.getElementById("main").removeAttribute("_echarts_instance_");
+            var myChart = echarts.init(document.getElementById('main'));
+
+            //请求数据
+            var requestOptions = {
+                method: 'GET',
+                redirect: 'follow'
+            };
+
+            fetch(url,
+                    requestOptions)
+                .then(response => response.json())
+                .then(result => {
+                    result.forEach(rs => {
+                        keyword.unshift(rs.keyword);
+                        searchNum.unshift(rs.searchNum);
+                        link.unshift(rs.link);
+                        rank.unshift(rs.rank);
+                    });
+
+                    if (keyword == 0) {
+                        alert("没有对应的热搜数据");
+                        return
+                    }
+
+                    myChart.setOption(option);
+                    window.onresize = myChart.resize();
+                })
+                .catch(error => console.log('error', error));
+
+
+            //由深到浅10个颜色
+            // var myColor = ['#972a2d', '#ab3033', '#bf3539', '#ca4346', '#d0575a', '#d66b6e', '#db7f81', '#e19395',
+            //     '#e7a7a9', '#ecbbbc',]
+            // 指定图表的配置项和数据
+            var option = {
+                grid: {
+                    containLabel: true,
+                    right: 120
+                },
+                title: {
+                    text: '单日微博热搜排行榜',
+
+                    top: 10,
+                    left: 600,
+                    subtext: '(点击图例可将其数据隐藏)',
+                },
+                tooltip: {},
+                legend: {
+                    tooltip: {
+                        show: true
+                    },
+                    data: ['热度', '单日最高热搜排名'],
+                    top: 35,
+                    left: 400,
+                },
+                yAxis: {
+                    data: keyword,
+                    axisPointer: {
+                        label: {
+                            show: true,
+                            margin: 30
+                        }
+                    },
+                },
+                xAxis: [{
+                    type: 'value',
+                    name: '热度',
+                }, {
+                    type: 'value',
+                    name: '单日最高热搜排名',
+                    minInterval: 1,
+                    max: function (value) {
+                        return Math.ceil(value.max * 1.2)
+                    },
+                    splitLine: {
+                        show: false
+                    }
+                }],
+                series: [{
+                        name: '热度',
+                        type: 'bar',
+                        data: searchNum,
+                        label: {
+                            show: true,
+                            position: 'right'
+                        },
+                        emphasis: {
+                            itemStyle: {
+                                color: '#6495ED'
+                            }
+                        },
+                        itemStyle: {
+                            normal: {
+                                color: function (params) {
+                                    // var index = getArrayIndex(keyword, params.name);
+                                    // return myColor[index]
+                                    if (params.value > 0 && params.value <= 250000) {
+                                        return '#ecbbbc';
+                                    } else if (params.value > 250000 && params.value <= 500000) {
+                                        return "#e7a7a9";
+                                    } else if (params.value > 500000 && params.value <= 750000) {
+                                        return "#e19395";
+                                    } else if (params.value > 750000 && params.value <= 1250000) {
+                                        return "#db7f81";
+                                    } else if (params.value > 1250000 && params.value <= 2000000) {
+                                        return "#d66b6e";
+                                    } else if (params.value > 2000000 && params.value <= 3000000) {
+                                        return "#d0575a";
+                                    } else if (params.value > 3000000 && params.value <= 4500000) {
+                                        return "#ca4346";
+                                    } else if (params.value > 4500000 && params.value <= 7000000) {
+                                        return "#bf3539";
+                                    } else if (params.value > 7000000 && params.value <= 10000000) {
+                                        return "#ab3033";
+                                    } else if (params.value > 10000000 && params.value <= 12000000) {
+                                        return "#972a2d";
+                                    } else if (params.value > 12000000 && params.value <= 13000000) {
+                                        return "#851820";
+                                    } else if (params.value > 13000000 && params.value <= 14000000) {
+                                        return "#751820";
+                                    } else if (params.value > 14000000 && params.value <= 16000000) {
+                                        return "#651820";
+                                    } else {
+                                        return "#460416";
+                                    }
+                                },
+                                barBorderRadius: [5, 22, 22, 5]
+                            }
+                        }
+                    },
+                    //单个柱状图分别渐变
+                    // color: new echarts.graphic.LinearGradient(
+                    //         0, 0, 1, 0,   // 0,0,1,0表示从左向右    0,0,0,1表示从右向左
+                    //         [
+                    //             {offset: 1, color: '#972a2d'},
+                    //             {offset: 0.8, color:'#d66b6e'},
+                    //             {offset: 0, color: '#ecbbbc'}
+                    //         ]
+                    //     ), 
+                    {
+                        name: '单日最高热搜排名',
+                        type: 'line',
+                        lineStyle: {
+                            color: '#FF8C00',
+                            width: 1.75
+                        },
+                        emphasis: {
+                            itemStyle: {
+                                color: '#6495ED'
+                            }
+                        },
+                        symbol: 'pin',
+                        symbolSize: 16,
+                        xAxisIndex: 1,
+                        data: rank,
+                        itemStyle: {
+                            normal: {
+                                color: function (params) {
+                                    return '#FFD700'
+                                }
+                            }
+                        }
+                    }
+                ]
+
+            };
+
+            // 处理点击事件并且链接到对应的微博
+            myChart.on('click', function (params) {
+                //所有的鼠标事件包含参数 params，这是一个包含点击图形的数据信息的对象
+                window.open(link[getArrayIndex(keyword, params.name)])
+            });
+        }
+
+
+        //单日期 热搜数量
+        function changeNum() {
+            var time = document.getElementById("Date").value;
+            var num = document.getElementById("Num").value;
+            var Keyword = document.getElementById("Keyword2").value;
+            var order = document.getElementById('order1').value;
+
+            //构造变量
+            var keyword = new Array(); //热搜
+            var searchNum = new Array(); //搜索数
+            var link = new Array(); //热搜链接
+            var rank = new Array(); //最高排名
+
+            if (num == 0) {
+                alert("请输入热搜数量！")
+            }
+
+            if (Keyword.length == 0) {
+                var url = "http://pi.deadpoetspoon.xyz:7800/resou/?datacode=lkrs&time=" + time + "\&num=" + num +
+                    "&sortcode=s" + order;
+            } else {
+                var url = "http://pi.deadpoetspoon.xyz:7800/resou/?datacode=lkrs&time=" + time + "\&num=" + num +
+                    "&keyword=" + Keyword + "&sortcode=s" + order;
+            }
+            // 基于准备好的dom，初始化echarts实例
+            document.getElementById("main").removeAttribute("_echarts_instance_");
+            var myChart = echarts.init(document.getElementById('main'));
+
+            //请求数据
+            var requestOptions = {
+                method: 'GET',
+                redirect: 'follow'
+            };
+
+            fetch(url, requestOptions)
+                .then(response => response.json())
+                .then(result => {
+                    result.forEach(rs => {
+                        keyword.unshift(rs.keyword);
+                        searchNum.unshift(rs.searchNum);
+                        link.unshift(rs.link);
+                        rank.unshift(rs.rank);
+                    });
+                    if (keyword == 0) {
+                        alert("没有对应的热搜数据");
+                        return
+                    }
+                    myChart.setOption(option);
+                    window.onresize = myChart.resize();
+
+                })
+                .catch(error => console.log('error', error));
+
+
+            // 指定图表的配置项和数据
+            var option = {
+                grid: {
+                    containLabel: true,
+                    right: 120
+                },
+                title: {
+                    text: '单日微博热搜排行榜',
+                    top: 10,
+                    left: 600,
+                    subtext: '(点击图例可隐藏)',
+                },
+                tooltip: {},
+                legend: {
+                    tooltip: {
+                        show: true
+                    },
+                    data: ['热度', '单日最高热搜排名'],
+                    top: 35,
+                    left: 400,
+                },
+                yAxis: {
+                    data: keyword,
+                    axisPointer: {
+                        label: {
+                            show: true,
+                            margin: 30
+                        }
+                    },
+                },
+                xAxis: [{
+                    type: 'value',
+                    name: '热度',
+                }, {
+                    type: 'value',
+                    name: '单日最高热搜排名',
+                    minInterval: 1,
+                    max: function (value) {
+                        return Math.ceil(value.max * 1.2)
+                    },
+                    splitLine: {
+                        show: false
+                    }
+                }],
+                series: [{
+                        name: '热度',
+                        type: 'bar',
+                        data: searchNum,
+                        label: {
+                            show: true,
+                            position: 'right'
+                        },
+                        emphasis: {
+                            itemStyle: {
+                                color: '#6495ED'
+                            }
+                        },
+                        itemStyle: {
+                            normal: {
+                                color: function (params) {
+                                    // return myColor[getArrayIndex(keyword, params.name)]
+                                    if (params.value > 0 && params.value <= 250000) {
+                                        return '#ecbbbc';
+                                    } else if (params.value > 250000 && params.value <= 500000) {
+                                        return "#e7a7a9";
+                                    } else if (params.value > 500000 && params.value <= 750000) {
+                                        return "#e19395";
+                                    } else if (params.value > 750000 && params.value <= 1250000) {
+                                        return "#db7f81";
+                                    } else if (params.value > 1250000 && params.value <= 2000000) {
+                                        return "#d66b6e";
+                                    } else if (params.value > 2000000 && params.value <= 3000000) {
+                                        return "#d0575a";
+                                    } else if (params.value > 3000000 && params.value <= 4500000) {
+                                        return "#ca4346";
+                                    } else if (params.value > 4500000 && params.value <= 7000000) {
+                                        return "#bf3539";
+                                    } else if (params.value > 7000000 && params.value <= 10000000) {
+                                        return "#ab3033";
+                                    } else if (params.value > 10000000 && params.value <= 12000000) {
+                                        return "#972a2d";
+                                    } else if (params.value > 12000000 && params.value <= 13000000) {
+                                        return "#851820";
+                                    } else if (params.value > 13000000 && params.value <= 14000000) {
+                                        return "#751820";
+                                    } else if (params.value > 14000000 && params.value <= 16000000) {
+                                        return "#651820";
+                                    } else {
+                                        return "#460416";
+                                    }
+                                },
+                                barBorderRadius: [5, 22, 22, 5]
+                            }
+                        }
+                    },
+                    {
+                        name: '单日最高热搜排名',
+                        type: 'line',
+                        lineStyle: {
+                            color: '#FF8C00',
+                            width: 1.75
+                        },
+                        emphasis: {
+                            itemStyle: {
+                                color: '#6495ED'
+                            }
+                        },
+                        symbol: 'pin',
+                        symbolSize: 16,
+                        xAxisIndex: 1,
+                        data: rank,
+                        itemStyle: {
+                            normal: {
+                                color: function (params) {
+                                    return '#FFD700'
+                                }
+                            }
+                        }
+                    }
+                ]
+
+            };
+
+            // 处理点击事件并且链接到对应的微博
+            myChart.on('click', function (params) {
+                //所有的鼠标事件包含参数 params，这是一个包含点击图形的数据信息的对象
+                window.open(link[getArrayIndex(keyword, params.name)])
+            })
+        }
+
+
+        //单日 关键词
+        function keyWord2() {
+            var time = document.getElementById("Date").value;
+            var num = document.getElementById("Num").value;
+            var Keyword = document.getElementById("Keyword2").value;
+            var order = document.getElementById('order1').value;
+            // 获取json中元素下标
+            //  arr: 传入的数组
+            //  obj: 需要获取下标的元素
+            function getArrayIndex(arr, obj) {
+                var i = arr.length;
+                //当i为0时，循环会跳出
+                while (i--) {
+                    if (arr[i] === obj) {
+                        return i
+                    }
+                }
+                return -1
+            }
+            //构造变量
+            var keyword = new Array(); //热搜
+            var searchNum = new Array(); //搜索数
+            var link = new Array(); //热搜链接
+            var rank = new Array(); //最高排名
+            if (Keyword == 0) {
+                alert("未输入关键词，默认搜索所有关键词！");
+            }
+
+            if (num.length == 0) {
+                var url = "http://pi.deadpoetspoon.xyz:7800/resou/?datacode=lkrs&time=" + time + "\&num=50&keyword=" +
+                    Keyword + "&sortcode=s" + order;
+            } else {
+                var url = "http://pi.deadpoetspoon.xyz:7800/resou/?datacode=lkrs&time=" + time + "\&num=" + num +
+                    "&keyword=" + Keyword + "&sortcode=s" + order;
+            }
+            // 基于准备好的dom，初始化echarts实例
+            document.getElementById("main").removeAttribute("_echarts_instance_");
+            var myChart = echarts.init(document.getElementById('main'));
+
+            //请求数据
+            var requestOptions = {
+                method: 'GET',
+                redirect: 'follow'
+            };
+
+            fetch(url, requestOptions)
+                .then(response => response.json())
+                .then(result => {
+                    result.forEach(rs => {
+                        keyword.unshift(rs.keyword);
+                        searchNum.unshift(rs.searchNum);
+                        link.unshift(rs.link);
+                        rank.unshift(rs.rank);
+                    });
+                    if (keyword == 0) {
+                        alert("没有对应的热搜数据");
+                        return
+                    }
+                    myChart.setOption(option);
+                    window.onresize = myChart.resize();
+
+                })
+                .catch(error => console.log('error', error));
+
+
+            // 指定图表的配置项和数据
+            var option = {
+                grid: {
+                    containLabel: true,
+                    right: 120
+                },
+                title: {
+                    text: '单日微博热搜排行榜',
+                    top: 10,
+                    left: 600,
+                    subtext: '(点击图例可隐藏)',
+                },
+                tooltip: {},
+                legend: {
+                    tooltip: {
+                        show: true
+                    },
+                    data: ['热度', '单日最高热搜排名'],
+                    top: 35,
+                    left: 400,
+                },
+                yAxis: {
+                    data: keyword,
+                    axisPointer: {
+                        label: {
+                            show: true,
+                            margin: 30
+                        }
+                    },
+                },
+                xAxis: [{
+                    type: 'value',
+                    name: '热度',
+                }, {
+                    type: 'value',
+                    name: '单日最高热搜排名',
+                    minInterval: 1,
+                    max: function (value) {
+                        return Math.ceil(value.max * 1.2)
+                    },
+                    splitLine: {
+                        show: false
+                    }
+                }],
+                series: [{
+                        name: '热度',
+                        type: 'bar',
+                        data: searchNum,
+                        label: {
+                            show: true,
+                            position: 'right'
+                        },
+                        emphasis: {
+                            itemStyle: {
+                                color: '#6495ED'
+                            }
+                        },
+                        itemStyle: {
+                            normal: {
+                                color: function (params) {
+                                    // return myColor[getArrayIndex(keyword, params.name)]
+                                    if (params.value > 0 && params.value <= 250000) {
+                                        return '#ecbbbc';
+                                    } else if (params.value > 250000 && params.value <= 500000) {
+                                        return "#e7a7a9";
+                                    } else if (params.value > 500000 && params.value <= 750000) {
+                                        return "#e19395";
+                                    } else if (params.value > 750000 && params.value <= 1250000) {
+                                        return "#db7f81";
+                                    } else if (params.value > 1250000 && params.value <= 2000000) {
+                                        return "#d66b6e";
+                                    } else if (params.value > 2000000 && params.value <= 3000000) {
+                                        return "#d0575a";
+                                    } else if (params.value > 3000000 && params.value <= 4500000) {
+                                        return "#ca4346";
+                                    } else if (params.value > 4500000 && params.value <= 7000000) {
+                                        return "#bf3539";
+                                    } else if (params.value > 7000000 && params.value <= 10000000) {
+                                        return "#ab3033";
+                                    } else if (params.value > 10000000 && params.value <= 12000000) {
+                                        return "#972a2d";
+                                    } else if (params.value > 12000000 && params.value <= 13000000) {
+                                        return "#851820";
+                                    } else if (params.value > 13000000 && params.value <= 14000000) {
+                                        return "#751820";
+                                    } else if (params.value > 14000000 && params.value <= 16000000) {
+                                        return "#651820";
+                                    } else {
+                                        return "#460416";
+                                    }
+                                },
+                                barBorderRadius: [5, 22, 22, 5]
+                            }
+                        }
+                    },
+                    {
+                        name: '单日最高热搜排名',
+                        type: 'line',
+                        lineStyle: {
+                            color: '#FF8C00',
+                            width: 1.75
+                        },
+                        emphasis: {
+                            itemStyle: {
+                                color: '#6495ED'
+                            }
+                        },
+                        symbol: 'pin',
+                        symbolSize: 16,
+                        xAxisIndex: 1,
+                        data: rank,
+                        itemStyle: {
+                            normal: {
+                                color: function (params) {
+                                    return '#FFD700'
+                                }
+                            }
+                        }
+                    }
+                ]
+
+            };
+
+            // 处理点击事件并且链接到对应的微博
+            myChart.on('click', function (params) {
+                //所有的鼠标事件包含参数 params，这是一个包含点击图形的数据信息的对象
+                window.open(link[getArrayIndex(keyword, params.name)])
+            })
+        }
+
+
+        //单日 热搜排列
+        function order1() {
+            var time = document.getElementById("Date").value;
+            var num = document.getElementById("Num").value;
+            var Keyword = document.getElementById("Keyword2").value;
+            var order = document.getElementById('order1').value;
+
+            //构造变量
+            var keyword = new Array(); //热搜
+            var searchNum = new Array(); //搜索数
+            var link = new Array(); //热搜链接
+            var rank = new Array(); //最高排名
+
+            if (num.length == 0 && Keyword == 0) {
+                var url = "http://pi.deadpoetspoon.xyz:7800/resou/?datacode=lkrs&time=" + time + "\&num=50&sortcode=s" +
+                    order;
+            } else if (num.length == 0 && Keyword != 0) {
+                var url = "http://pi.deadpoetspoon.xyz:7800/resou/?datacode=lkrs&time=" + time + "\&num=50&keyword=" +
+                    Keyword + "&sortcode=s" + order;
+            } else if (num.length != 0 && Keyword == 0) {
+                var url = "http://pi.deadpoetspoon.xyz:7800/resou/?datacode=lkrs&time=" + time + "\&num=" + num +
+                    "&sortcode=s" + order;
+            } else {
+                var url = "http://pi.deadpoetspoon.xyz:7800/resou/?datacode=lkrs&time=" + time + "\&num=" + num +
+                    "&keyword=" + Keyword + "&sortcode=s" + order;
+            }
+            // 基于准备好的dom，初始化echarts实例
+            document.getElementById("main").removeAttribute("_echarts_instance_");
+            var myChart = echarts.init(document.getElementById('main'));
+
+            //请求数据
+            var requestOptions = {
+                method: 'GET',
+                redirect: 'follow'
+            };
+
+            fetch(url, requestOptions)
+                .then(response => response.json())
+                .then(result => {
+                    result.forEach(rs => {
+                        keyword.unshift(rs.keyword);
+                        searchNum.unshift(rs.searchNum);
+                        link.unshift(rs.link);
+                        rank.unshift(rs.rank);
+                    });
+                    if (keyword == 0) {
+                        alert("没有对应的热搜数据");
+                        return
+                    }
+                    myChart.setOption(option);
+                    window.onresize = myChart.resize();
+
+                })
+                .catch(error => console.log('error', error));
+
+
+            // 指定图表的配置项和数据
+            var option = {
+                grid: {
+                    containLabel: true,
+                    right: 120
+                },
+                title: {
+                    text: '单日微博热搜排行榜',
+                    top: 10,
+                    left: 600,
+                    subtext: '(点击图例可隐藏)',
+                },
+                tooltip: {},
+                legend: {
+                    tooltip: {
+                        show: true
+                    },
+                    data: ['热度', '单日最高热搜排名'],
+                    top: 35,
+                    left: 400,
+                },
+                yAxis: {
+                    data: keyword,
+                    axisPointer: {
+                        label: {
+                            show: true,
+                            margin: 30
+                        }
+                    },
+                },
+                xAxis: [{
+                    type: 'value',
+                    name: '热度',
+                }, {
+                    type: 'value',
+                    name: '单日最高热搜排名',
+                    minInterval: 1,
+                    max: function (value) {
+                        return Math.ceil(value.max * 1.2)
+                    },
+                    splitLine: {
+                        show: false
+                    }
+                }],
+                series: [{
+                        name: '热度',
+                        type: 'bar',
+                        data: searchNum,
+                        label: {
+                            show: true,
+                            position: 'right'
+                        },
+                        emphasis: {
+                            itemStyle: {
+                                color: '#6495ED'
+                            }
+                        },
+                        itemStyle: {
+                            normal: {
+                                color: function (params) {
+                                    // return myColor[getArrayIndex(keyword, params.name)]
+                                    if (params.value > 0 && params.value <= 250000) {
+                                        return '#ecbbbc';
+                                    } else if (params.value > 250000 && params.value <= 500000) {
+                                        return "#e7a7a9";
+                                    } else if (params.value > 500000 && params.value <= 750000) {
+                                        return "#e19395";
+                                    } else if (params.value > 750000 && params.value <= 1250000) {
+                                        return "#db7f81";
+                                    } else if (params.value > 1250000 && params.value <= 2000000) {
+                                        return "#d66b6e";
+                                    } else if (params.value > 2000000 && params.value <= 3000000) {
+                                        return "#d0575a";
+                                    } else if (params.value > 3000000 && params.value <= 4500000) {
+                                        return "#ca4346";
+                                    } else if (params.value > 4500000 && params.value <= 7000000) {
+                                        return "#bf3539";
+                                    } else if (params.value > 7000000 && params.value <= 10000000) {
+                                        return "#ab3033";
+                                    } else if (params.value > 10000000 && params.value <= 12000000) {
+                                        return "#972a2d";
+                                    } else if (params.value > 12000000 && params.value <= 13000000) {
+                                        return "#851820";
+                                    } else if (params.value > 13000000 && params.value <= 14000000) {
+                                        return "#751820";
+                                    } else if (params.value > 14000000 && params.value <= 16000000) {
+                                        return "#651820";
+                                    } else {
+                                        return "#460416";
+                                    }
+                                },
+                                barBorderRadius: [5, 22, 22, 5]
+                            }
+                        }
+                    },
+                    {
+                        name: '单日最高热搜排名',
+                        type: 'line',
+                        lineStyle: {
+                            color: '#FF8C00',
+                            width: 1.75
+                        },
+                        emphasis: {
+                            itemStyle: {
+                                color: '#6495ED'
+                            }
+                        },
+                        symbol: 'pin',
+                        symbolSize: 16,
+                        xAxisIndex: 1,
+                        data: rank,
+                        itemStyle: {
+                            normal: {
+                                color: function (params) {
+                                    return '#FFD700'
+                                }
+                            }
+                        }
+                    }
+                ]
+
+            };
+
+            // 处理点击事件并且链接到对应的微博
+            myChart.on('click', function (params) {
+                //所有的鼠标事件包含参数 params，这是一个包含点击图形的数据信息的对象
+                window.open(link[getArrayIndex(keyword, params.name)])
+            })
+        }
+
+        //一段日期
+        function changeDates() {
+            var time1 = document.getElementById("Date1").value;
+            var time2 = document.getElementById("Date2").value;
+            var order = document.getElementById('order2').value;
+            var num = document.getElementById('Num2').value;
+            var Keyword = document.getElementById('Keyword3').value;
+
+            //构造变量
+            var keyword = new Array(); //热搜
+            var searchNum = new Array(); //搜索数
+            var link = new Array(); //热搜链接
+            var rank = new Array(); //最高排名
+            var tttime = new Array();
+
+            if (num == 0 && Keyword == 0) {
+                var url = "http://pi.deadpoetspoon.xyz:7800/resou/?datacode=lkrst&begintime=" + time1 + "&endtime=" +
+                    time2 + "&num=50&sortcode=s" + order;
+            } else if (num == 0 && Keyword != 0) {
+                var url = "http://pi.deadpoetspoon.xyz:7800/resou/?datacode=lkrst&begintime=" + time1 + "&endtime=" +
+                    time2 + "&num=50&sortcode=s" + order + "&keyword=" + Keyword;
+            } else if (num != 0 && Keyword == 0) {
+                var url = "http://pi.deadpoetspoon.xyz:7800/resou/?datacode=lkrst&begintime=" + time1 + "&endtime=" +
+                    time2 + "&num=" + num + "&sortcode=s" + order;
+            } else {
+                var url = "http://pi.deadpoetspoon.xyz:7800/resou/?datacode=lkrst&begintime=" + time1 + "&endtime=" +
+                    time2 + "&num=" + num + "&sortcode=s" + order + "&keyword=" + Keyword;
+            }
+
+            // 基于准备好的dom，初始化echarts实例
+            document.getElementById("main").removeAttribute("_echarts_instance_");
+            var myChart = echarts.init(document.getElementById('main'));
+
+            //请求数据
+            var requestOptions = {
+                method: 'GET',
+                redirect: 'follow'
+            };
+            fetch(url,
+                    requestOptions)
+                .then(response => response.json())
+                .then(result => {
+                    result.forEach(rs => {
+                        keyword.unshift(rs.keyword);
+                        searchNum.unshift(rs.searchNum);
+                        link.unshift(rs.link);
+                        rank.unshift(rs.rank);
+                        tttime.unshift(rs.time)
+                    });
+                    if (keyword == 0) {
+                        alert("没有对应的热搜数据");
+                        return
+                    }
+                    myChart.setOption(option);
+                    window.onresize = myChart.resize();
+
+                })
+                .catch(error => console.log('error', error));
+
+
+            // 指定图表的配置项和数据
+            var option = {
+                grid: {
+                    containLabel: true,
+                    right: 120
+                },
+                title: {
+                    text: '一段日期内的微博热搜排行榜',
+
+                    top: 10,
+                    left: 600,
+                    subtext: '(点击图例可隐藏)',
+                },
+                tooltip: {},
+                legend: {
+                    tooltip: {
+                        show: true
+                    },
+                    data: ['热度', '单日最高热搜排名'],
+                    top: 35,
+                    left: 400,
+                },
+                yAxis: {
+                    data: keyword,
+                    axisPointer: {
+                        label: {
+                            show: true,
+                            margin: 30
+                        }
+                    },
+                    axisLabel: {
+                        formatter: function (val) {
+                            return val +"  "+ tttime[getArrayIndex(keyword, val)]
+                        }
+                    }
+                },
+                xAxis: [{
+                    type: 'value',
+                    name: '热度',
+                }, {
+                    type: 'value',
+                    name: '单日最高热搜排名',
+                    minInterval: 1,
+                    max: function (value) {
+                        return Math.ceil(value.max * 1.2)
+                    },
+                    splitLine: {
+                        show: false
+                    }
+                }],
+                series: [{
+                        name: '热度',
+                        type: 'bar',
+                        data: searchNum,
+                        label: {
+                            show: true,
+                            position: 'right'
+                        },
+                        emphasis: {
+                            itemStyle: {
+                                color: '#6495ED'
+                            }
+                        },
+                        itemStyle: {
+                            normal: {
+                                color: function (params) {
+                                    // return myColor[getArrayIndex(keyword, params.name)]
+                                    if (params.value > 0 && params.value <= 250000) {
+                                        return '#ecbbbc';
+                                    } else if (params.value > 250000 && params.value <= 500000) {
+                                        return "#e7a7a9";
+                                    } else if (params.value > 500000 && params.value <= 750000) {
+                                        return "#e19395";
+                                    } else if (params.value > 750000 && params.value <= 1250000) {
+                                        return "#db7f81";
+                                    } else if (params.value > 1250000 && params.value <= 2000000) {
+                                        return "#d66b6e";
+                                    } else if (params.value > 2000000 && params.value <= 3000000) {
+                                        return "#d0575a";
+                                    } else if (params.value > 3000000 && params.value <= 4500000) {
+                                        return "#ca4346";
+                                    } else if (params.value > 4500000 && params.value <= 7000000) {
+                                        return "#bf3539";
+                                    } else if (params.value > 7000000 && params.value <= 10000000) {
+                                        return "#ab3033";
+                                    } else if (params.value > 10000000 && params.value <= 12000000) {
+                                        return "#972a2d";
+                                    } else if (params.value > 12000000 && params.value <= 13000000) {
+                                        return "#851820";
+                                    } else if (params.value > 13000000 && params.value <= 14000000) {
+                                        return "#751820";
+                                    } else if (params.value > 14000000 && params.value <= 16000000) {
+                                        return "#651820";
+                                    } else {
+                                        return "#460416";
+                                    }
+                                },
+                                barBorderRadius: [5, 22, 22, 5]
+                            }
+                        }
+                    },
+                    {
+                        name: '单日最高热搜排名',
+                        type: 'line',
+                        lineStyle: {
+                            color: '#FF8C00',
+                            width: 1.75
+                        },
+                        emphasis: {
+                            itemStyle: {
+                                color: '#6495ED'
+                            }
+                        },
+                        symbol: 'pin',
+                        symbolSize: 16,
+                        xAxisIndex: 1,
+                        data: rank,
+                        itemStyle: {
+                            normal: {
+                                color: function (params) {
+                                    return '#FFD700'
+                                }
+                            }
+                        }
+                    }
+                ]
+
+            };
+
+            // 处理点击事件并且链接到对应的微博
+            myChart.on('click', function (params) {
+                //所有的鼠标事件包含参数 params，这是一个包含点击图形的数据信息的对象
+                window.open(link[getArrayIndex(keyword, params.name)])
+            });
+        }
+
+
+        //一段日期 热搜数量
+        function changeNum2() {
+            var time1 = document.getElementById("Date1").value;
+            var time2 = document.getElementById("Date2").value;
+            var num = document.getElementById("Num2").value;
+            var Keyword = document.getElementById("Keyword3").value;
+            var order = document.getElementById('order2').value;
+
+            //构造变量
+            var keyword = new Array();
+            var searchNum = new Array();
+            var link = new Array();
+            var rank = new Array();
+            var tttime = new Array();
+
+            if (num == 0) {
+                alert("请输入热搜数量！")
+            }
+
+            if (Keyword.length == 0) {
+                var url = "http://pi.deadpoetspoon.xyz:7800/resou/?datacode=lkrst&begintime=" + time1 + "&endtime=" +
+                    time2 + "&num=" + num + "&sortcode=s" + order;
+            } else {
+                var url = "http://pi.deadpoetspoon.xyz:7800/resou/?datacode=lkrst&begintime=" + time1 + "&endtime=" +
+                    time2 + "&num=" + num + "&keyword=" + Keyword + "&sortcode=s" + order;
+            }
+
+            // 基于准备好的dom，初始化echarts实例
+            document.getElementById("main").removeAttribute("_echarts_instance_");
+            var myChart = echarts.init(document.getElementById('main'));
+
+            //请求数据
+            var requestOptions = {
+                method: 'GET',
+                redirect: 'follow'
+            };
+
+
+            fetch(url, requestOptions)
+                .then(response => response.json())
+                .then(result => {
+                    result.forEach(rs => {
+                        keyword.unshift(rs.keyword);
+                        searchNum.unshift(rs.searchNum);
+                        link.unshift(rs.link);
+                        rank.unshift(rs.rank);
+                        tttime.unshift(rs.time);
+                    });
+                    if (keyword == 0) {
+                        alert("没有对应的热搜数据");
+                        return
+                    }
+                    myChart.setOption(option);
+                    window.onresize = myChart.resize();
+
+                })
+                .catch(error => console.log('error', error));
+
+
+            // 指定图表的配置项和数据
+            var option = {
+                grid: {
+                    containLabel: true,
+                    right: 120
+                },
+                title: {
+                    text: '一段时间内的微博热搜排行榜',
+                    top: 10,
+                    left: 600,
+                    subtext: '(点击图例可隐藏)',
+                },
+                tooltip: {},
+                legend: {
+                    tooltip: {
+                        show: true
+                    },
+                    data: ['热度', '单日最高热搜排名'],
+                    top: 35,
+                    left: 400,
+                },
+                yAxis: {
+                    data: keyword,
+                    axisPointer: {
+                        label: {
+                            show: true,
+                            margin: 30
+                        }
+                    },
+                    axisLabel: {
+                        formatter: function (val) {
+                            return val + tttime[getArrayIndex(keyword, val)]
+                        }
+                    }
+                },
+                xAxis: [{
+                    type: 'value',
+                    name: '热度',
+                }, {
+                    type: 'value',
+                    name: '单日最高热搜排名',
+                    minInterval: 1,
+                    max: function (value) {
+                        return Math.ceil(value.max * 1.2)
+                    },
+                    splitLine: {
+                        show: false
+                    }
+                }],
+                series: [{
+                        name: '热度',
+                        type: 'bar',
+                        data: searchNum,
+                        label: {
+                            show: true,
+                            position: 'right'
+                        },
+                        emphasis: {
+                            itemStyle: {
+                                color: '#6495ED'
+                            }
+                        },
+                        itemStyle: {
+                            normal: {
+                                color: function (params) {
+                                    if (params.value > 0 && params.value <= 250000) {
+                                        return '#ecbbbc';
+                                    } else if (params.value > 250000 && params.value <= 500000) {
+                                        return "#e7a7a9";
+                                    } else if (params.value > 500000 && params.value <= 750000) {
+                                        return "#e19395";
+                                    } else if (params.value > 750000 && params.value <= 1250000) {
+                                        return "#db7f81";
+                                    } else if (params.value > 1250000 && params.value <= 2000000) {
+                                        return "#d66b6e";
+                                    } else if (params.value > 2000000 && params.value <= 3000000) {
+                                        return "#d0575a";
+                                    } else if (params.value > 3000000 && params.value <= 4500000) {
+                                        return "#ca4346";
+                                    } else if (params.value > 4500000 && params.value <= 7000000) {
+                                        return "#bf3539";
+                                    } else if (params.value > 7000000 && params.value <= 10000000) {
+                                        return "#ab3033";
+                                    } else if (params.value > 10000000 && params.value <= 12000000) {
+                                        return "#972a2d";
+                                    } else if (params.value > 12000000 && params.value <= 13000000) {
+                                        return "#851820";
+                                    } else if (params.value > 13000000 && params.value <= 14000000) {
+                                        return "#751820";
+                                    } else if (params.value > 14000000 && params.value <= 16000000) {
+                                        return "#651820";
+                                    } else {
+                                        return "#460416";
+                                    }
+                                },
+                                barBorderRadius: [5, 22, 22, 5]
+                            }
+                        }
+                    },
+                    {
+                        name: '单日最高热搜排名',
+                        type: 'line',
+                        lineStyle: {
+                            color: '#FF8C00',
+                            width: 1.75
+                        },
+                        emphasis: {
+                            itemStyle: {
+                                color: '#6495ED'
+                            }
+                        },
+                        symbol: 'pin',
+                        symbolSize: 16,
+                        xAxisIndex: 1,
+                        data: rank,
+                        itemStyle: {
+                            normal: {
+                                color: function (params) {
+                                    return '#FFD700'
+                                }
+                            }
+                        }
+                    }
+                ]
+
+            };
+
+            // 处理点击事件并且链接到对应的微博
+            myChart.on('click', function (params) {
+                window.open(link[getArrayIndex(keyword, params.name)])
+            })
+        }
+
+        //一段日期 关键词
+        function keyWord3() {
+            var time1 = document.getElementById("Date1").value;
+            var time2 = document.getElementById("Date2").value;
+            var num = document.getElementById("Num2").value;
+            var Keyword = document.getElementById("Keyword3").value;
+            var order = document.getElementById('order2').value;
+
+            //构造变量
+            var keyword = new Array();
+            var searchNum = new Array();
+            var link = new Array();
+            var rank = new Array();
+            var tttime = new Array();
+            if (Keyword == 0) {
+                alert("未输入关键词，默认搜索所有关键词！");
+            }
+            if (num.length == 0) {
+                var url = "http://pi.deadpoetspoon.xyz:7800/resou/?datacode=lkrst&begintime=" + time1 + "&endtime=" +
+                    time2 + "&num=50&keyword=" + Keyword + "&sortcode=s" + order;
+            } else {
+                var url = "http://pi.deadpoetspoon.xyz:7800/resou/?datacode=lkrst&begintime=" + time1 + "&endtime=" +
+                    time2 + "&num=" + num + "&keyword=" + Keyword + "&sortcode=s" + order;
+            }
+            // 基于准备好的dom，初始化echarts实例
+            document.getElementById("main").removeAttribute("_echarts_instance_");
+            var myChart = echarts.init(document.getElementById('main'));
+
+            //请求数据
+            var requestOptions = {
+                method: 'GET',
+                redirect: 'follow'
+            };
+
+
+            fetch(url, requestOptions)
+                .then(response => response.json())
+                .then(result => {
+                    result.forEach(rs => {
+                        keyword.unshift(rs.keyword);
+                        searchNum.unshift(rs.searchNum);
+                        link.unshift(rs.link);
+                        rank.unshift(rs.rank);
+                        tttime.unshift(rs.time);
+                    });
+                    if (keyword == 0) {
+                        alert("没有对应的热搜数据");
+                        return
+                    }
+                    myChart.setOption(option);
+                    window.onresize = myChart.resize();
+
+                })
+                .catch(error => console.log('error', error));
+
+
+            // 指定图表的配置项和数据
+            var option = {
+                grid: {
+                    containLabel: true,
+                    right: 120
+                },
+                title: {
+                    text: '一段时间内的微博热搜排行榜',
+                    top: 10,
+                    left: 600,
+                    subtext: '(点击图例可隐藏)',
+                },
+                tooltip: {},
+                legend: {
+                    tooltip: {
+                        show: true
+                    },
+                    data: ['热度', '单日最高热搜排名'],
+                    top: 35,
+                    left: 400,
+                },
+                yAxis: {
+                    data: keyword,
+                    axisPointer: {
+                        label: {
+                            show: true,
+                            margin: 30
+                        }
+                    },
+                    axisLabel: {
+                        formatter: function (val) {
+                            return val + tttime[getArrayIndex(keyword, val)]
+                        }
+                    }
+                },
+                xAxis: [{
+                    type: 'value',
+                    name: '热度',
+                }, {
+                    type: 'value',
+                    name: '单日最高热搜排名',
+                    minInterval: 1,
+                    max: function (value) {
+                        return Math.ceil(value.max * 1.2)
+                    },
+                    splitLine: {
+                        show: false
+                    }
+                }],
+                series: [{
+                        name: '热度',
+                        type: 'bar',
+                        data: searchNum,
+                        label: {
+                            show: true,
+                            position: 'right'
+                        },
+                        emphasis: {
+                            itemStyle: {
+                                color: '#6495ED'
+                            }
+                        },
+                        itemStyle: {
+                            normal: {
+                                color: function (params) {
+                                    if (params.value > 0 && params.value <= 250000) {
+                                        return '#ecbbbc';
+                                    } else if (params.value > 250000 && params.value <= 500000) {
+                                        return "#e7a7a9";
+                                    } else if (params.value > 500000 && params.value <= 750000) {
+                                        return "#e19395";
+                                    } else if (params.value > 750000 && params.value <= 1250000) {
+                                        return "#db7f81";
+                                    } else if (params.value > 1250000 && params.value <= 2000000) {
+                                        return "#d66b6e";
+                                    } else if (params.value > 2000000 && params.value <= 3000000) {
+                                        return "#d0575a";
+                                    } else if (params.value > 3000000 && params.value <= 4500000) {
+                                        return "#ca4346";
+                                    } else if (params.value > 4500000 && params.value <= 7000000) {
+                                        return "#bf3539";
+                                    } else if (params.value > 7000000 && params.value <= 10000000) {
+                                        return "#ab3033";
+                                    } else if (params.value > 10000000 && params.value <= 12000000) {
+                                        return "#972a2d";
+                                    } else if (params.value > 12000000 && params.value <= 13000000) {
+                                        return "#851820";
+                                    } else if (params.value > 13000000 && params.value <= 14000000) {
+                                        return "#751820";
+                                    } else if (params.value > 14000000 && params.value <= 16000000) {
+                                        return "#651820";
+                                    } else {
+                                        return "#460416";
+                                    }
+                                },
+                                barBorderRadius: [5, 22, 22, 5]
+                            }
+                        }
+                    },
+                    {
+                        name: '单日最高热搜排名',
+                        type: 'line',
+                        lineStyle: {
+                            color: '#FF8C00',
+                            width: 1.75
+                        },
+                        emphasis: {
+                            itemStyle: {
+                                color: '#6495ED'
+                            }
+                        },
+                        symbol: 'pin',
+                        symbolSize: 16,
+                        xAxisIndex: 1,
+                        data: rank,
+                        itemStyle: {
+                            normal: {
+                                color: function (params) {
+                                    return '#FFD700'
+                                }
+                            }
+                        }
+                    }
+                ]
+
+            };
+
+            // 处理点击事件并且链接到对应的微博
+            myChart.on('click', function (params) {
+                window.open(link[getArrayIndex(keyword, params.name)])
+            })
+        }
+
+        //一段时间 排序
+        function order2() {
+            var time1 = document.getElementById("Date1").value;
+            var time2 = document.getElementById("Date2").value;
+            var num = document.getElementById("Num2").value;
+            var Keyword = document.getElementById("Keyword3").value;
+            var order = document.getElementById('order2').value;
+
+            //构造变量
+            var keyword = new Array(); //热搜
+            var searchNum = new Array(); //搜索数
+            var link = new Array(); //热搜链接
+            var rank = new Array(); //最高排名
+            var tttime = new Array();
+
+            if (num.length == 0 && Keyword == 0) {
+                var url = "http://pi.deadpoetspoon.xyz:7800/resou/?datacode=lkrst&begintime=" + time1 + "&endtime=" +
+                    time2 + "\&num=50&sortcode=s" + order;
+            } else if (num.length == 0 && Keyword != 0) {
+                var url = "http://pi.deadpoetspoon.xyz:7800/resou/?datacode=lkrst&begintime=" + time1 + "&endtime=" +
+                    time2 + "\&num=50&keyword=" + Keyword + "&sortcode=s" + order;
+            } else if (num.length != 0 && Keyword == 0) {
+                var url = "http://pi.deadpoetspoon.xyz:7800/resou/?datacode=lkrst&begintime=" + time1 + "&endtime=" +
+                    time2 + "\&num=" + num + "&sortcode=s" + order;
+            } else {
+                var url = "http://pi.deadpoetspoon.xyz:7800/resou/?datacode=lkrst&begintime=" + time1 + "&endtime=" +
+                    time2 + "\&num=" + num + "&keyword=" + Keyword + "&sortcode=s" + order;
+            }
+            // 基于准备好的dom，初始化echarts实例
+            document.getElementById("main").removeAttribute("_echarts_instance_");
+            var myChart = echarts.init(document.getElementById('main'));
+
+            //请求数据
+            var requestOptions = {
+                method: 'GET',
+                redirect: 'follow'
+            };
+
+            fetch(url, requestOptions)
+                .then(response => response.json())
+                .then(result => {
+                    result.forEach(rs => {
+                        keyword.unshift(rs.keyword);
+                        searchNum.unshift(rs.searchNum);
+                        link.unshift(rs.link);
+                        rank.unshift(rs.rank);
+                        tttime.unshift(rs.time);
+                    });
+                    if (keyword == 0) {
+                        alert("没有对应的热搜数据");
+                        return
+                    }
+                    myChart.setOption(option);
+                    window.onresize = myChart.resize();
+
+                })
+                .catch(error => console.log('error', error));
+
+
+            // 指定图表的配置项和数据
+            var option = {
+                grid: {
+                    containLabel: true,
+                    right: 120
+                },
+                title: {
+                    text: '一段时间内的微博热搜排行榜',
+                    top: 10,
+                    left: 600,
+                    subtext: '(点击图例可隐藏)',
+                },
+                tooltip: {},
+                legend: {
+                    tooltip: {
+                        show: true
+                    },
+                    data: ['热度', '单日最高热搜排名'],
+                    top: 35,
+                    left: 400,
+                },
+                yAxis: {
+                    data: keyword,
+                    axisPointer: {
+                        label: {
+                            show: true,
+                            margin: 30
+                        }
+                    },
+                    axisLabel: {
+                        formatter: function (val) {
+                            return val + tttime[getArrayIndex(keyword, val)]
+                        }
+                    }
+                },
+                xAxis: [{
+                    type: 'value',
+                    name: '热度',
+                }, {
+                    type: 'value',
+                    name: '单日最高热搜排名',
+                    minInterval: 1,
+                    max: function (value) {
+                        return Math.ceil(value.max * 1.2)
+                    },
+                    splitLine: {
+                        show: false
+                    }
+                }],
+                series: [{
+                        name: '热度',
+                        type: 'bar',
+                        data: searchNum,
+                        label: {
+                            show: true,
+                            position: 'right'
+                        },
+                        emphasis: {
+                            itemStyle: {
+                                color: '#6495ED'
+                            }
+                        },
+                        itemStyle: {
+                            normal: {
+                                color: function (params) {
+                                    // return myColor[getArrayIndex(keyword, params.name)]
+                                    if (params.value > 0 && params.value <= 250000) {
+                                        return '#ecbbbc';
+                                    } else if (params.value > 250000 && params.value <= 500000) {
+                                        return "#e7a7a9";
+                                    } else if (params.value > 500000 && params.value <= 750000) {
+                                        return "#e19395";
+                                    } else if (params.value > 750000 && params.value <= 1250000) {
+                                        return "#db7f81";
+                                    } else if (params.value > 1250000 && params.value <= 2000000) {
+                                        return "#d66b6e";
+                                    } else if (params.value > 2000000 && params.value <= 3000000) {
+                                        return "#d0575a";
+                                    } else if (params.value > 3000000 && params.value <= 4500000) {
+                                        return "#ca4346";
+                                    } else if (params.value > 4500000 && params.value <= 7000000) {
+                                        return "#bf3539";
+                                    } else if (params.value > 7000000 && params.value <= 10000000) {
+                                        return "#ab3033";
+                                    } else if (params.value > 10000000 && params.value <= 12000000) {
+                                        return "#972a2d";
+                                    } else if (params.value > 12000000 && params.value <= 13000000) {
+                                        return "#851820";
+                                    } else if (params.value > 13000000 && params.value <= 14000000) {
+                                        return "#751820";
+                                    } else if (params.value > 14000000 && params.value <= 16000000) {
+                                        return "#651820";
+                                    } else {
+                                        return "#460416";
+                                    }
+                                },
+                                barBorderRadius: [5, 22, 22, 5]
+                            }
+                        }
+                    },
+                    {
+                        name: '单日最高热搜排名',
+                        type: 'line',
+                        lineStyle: {
+                            color: '#FF8C00',
+                            width: 1.75
+                        },
+                        emphasis: {
+                            itemStyle: {
+                                color: '#6495ED'
+                            }
+                        },
+                        symbol: 'pin',
+                        symbolSize: 16,
+                        xAxisIndex: 1,
+                        data: rank,
+                        itemStyle: {
+                            normal: {
+                                color: function (params) {
+                                    return '#FFD700'
+                                }
+                            }
+                        }
+                    }
+                ]
+
+            };
+
+            // 处理点击事件并且链接到对应的微博
+            myChart.on('click', function (params) {
+                //所有的鼠标事件包含参数 params，这是一个包含点击图形的数据信息的对象
+                window.open(link[getArrayIndex(keyword, params.name)])
+            })
+        }
+
+        //关键词
+        function keyWord() {
+            var Keyword = document.getElementById("Keyword").value;
+            var order = document.getElementById('order3').value;
+            var num = document.getElementById('Num3').value;
+            //构造变量
+            var keyword = new Array();
+            var searchNum = new Array();
+            var link = new Array();
+            var rank = new Array();
+            var tttime = new Array();
+
+            if (Keyword == 0) {
+                alert("未输入关键词，默认搜索所有关键词！");
+            }
+
+            if (num == 0) {
+                var url = "http://pi.deadpoetspoon.xyz:7800/resou/?datacode=lkstr&num=50&keyword=" + Keyword +
+                    "&sortcode=s" + order;
+            } else {
+                var url = "http://pi.deadpoetspoon.xyz:7800/resou/?datacode=lkstr&num=" + num + "&keyword=" + Keyword +
+                    "&sortcode=s" + order;
+            }
+
+            // 基于准备好的dom，初始化echarts实例
+            document.getElementById("main").removeAttribute("_echarts_instance_");
+            var myChart = echarts.init(document.getElementById('main'));
+
+            //请求数据
+            var requestOptions = {
+                method: 'GET',
+                redirect: 'follow'
+            };
+
+            fetch(url,
+                    requestOptions)
+                .then(response => response.json())
+                .then(result => {
+                    result.forEach(rs => {
+                        keyword.unshift(rs.keyword);
+                        searchNum.unshift(rs.searchNum);
+                        link.unshift(rs.link);
+                        rank.unshift(rs.rank);
+                        tttime.unshift(rs.time);
+                    });
+                    if (keyword == 0) {
+                        alert("没有对应的热搜数据");
+                        return
+                    }
+                    myChart.setOption(option);
+                    window.onresize = myChart.resize();
+
+                })
+                .catch(error => console.log('error', error));
+
+
+            // 指定图表的配置项和数据
+            var option = {
+                grid: {
+                    containLabel: true,
+                    right: 120
+                },
+                title: {
+                    text: '关键词微博热搜排行榜',
+                    top: 10,
+                    left: 600,
+                    subtext: '(点击图例可隐藏)',
+                },
+                tooltip: {},
+                legend: {
+                    tooltip: {
+                        show: true
+                    },
+                    data: ['热度', '单日最高热搜排名'],
+                    top: 35,
+                    left: 400,
+                },
+                yAxis: {
+                    data: keyword,
+                    axisPointer: {
+                        label: {
+                            show: true,
+                            margin: 30
+                        }
+                    },
+                    axisLabel: {
+                        formatter: function (val) {
+                            return val +"  "+ tttime[getArrayIndex(keyword, val)]
+                        }
+                    }
+                },
+                xAxis: [{
+                    type: 'value',
+                    name: '热度',
+                }, {
+                    type: 'value',
+                    name: '单日最高热搜排名',
+                    minInterval: 1,
+                    max: function (value) {
+                        return Math.ceil(value.max * 1.2)
+                    },
+                    splitLine: {
+                        show: false
+                    }
+                }],
+                series: [{
+                        name: '热度',
+                        type: 'bar',
+                        data: searchNum,
+                        label: {
+                            show: true,
+                            position: 'right'
+                        },
+                        emphasis: {
+                            itemStyle: {
+                                color: '#6495ED'
+                            }
+                        },
+                        itemStyle: {
+                            normal: {
+                                color: function (params) {
+                                    if (params.value > 0 && params.value <= 250000) {
+                                        return '#ecbbbc';
+                                    } else if (params.value > 250000 && params.value <= 500000) {
+                                        return "#e7a7a9";
+                                    } else if (params.value > 500000 && params.value <= 750000) {
+                                        return "#e19395";
+                                    } else if (params.value > 750000 && params.value <= 1250000) {
+                                        return "#db7f81";
+                                    } else if (params.value > 1250000 && params.value <= 2000000) {
+                                        return "#d66b6e";
+                                    } else if (params.value > 2000000 && params.value <= 3000000) {
+                                        return "#d0575a";
+                                    } else if (params.value > 3000000 && params.value <= 4500000) {
+                                        return "#ca4346";
+                                    } else if (params.value > 4500000 && params.value <= 7000000) {
+                                        return "#bf3539";
+                                    } else if (params.value > 7000000 && params.value <= 10000000) {
+                                        return "#ab3033";
+                                    } else if (params.value > 10000000 && params.value <= 12000000) {
+                                        return "#972a2d";
+                                    } else if (params.value > 12000000 && params.value <= 13000000) {
+                                        return "#851820";
+                                    } else if (params.value > 13000000 && params.value <= 14000000) {
+                                        return "#751820";
+                                    } else if (params.value > 14000000 && params.value <= 16000000) {
+                                        return "#651820";
+                                    } else {
+                                        return "#460416";
+                                    }
+                                },
+                                barBorderRadius: [5, 22, 22, 5]
+                            }
+                        }
+                    },
+                    {
+                        name: '单日最高热搜排名',
+                        type: 'line',
+                        lineStyle: {
+                            color: '#FF8C00',
+                            width: 1.75
+                        },
+                        emphasis: {
+                            itemStyle: {
+                                color: '#6495ED'
+                            }
+                        },
+                        symbol: 'pin',
+                        symbolSize: 16,
+                        xAxisIndex: 1,
+                        data: rank,
+                        itemStyle: {
+                            normal: {
+                                color: function (params) {
+                                    return '#FFD700'
+                                }
+                            }
+                        }
+                    }
+                ]
+
+            };
+
+            // 处理点击事件并且链接到对应的微博
+            myChart.on('click', function (params) {
+                window.open(link[getArrayIndex(keyword, params.name)])
+            });
+        }
+
+        // 关键词 热搜数量
+        function changeNum3() {
+            var num = document.getElementById("Num3").value;
+            var Keyword = document.getElementById("Keyword").value;
+            var order = document.getElementById('order3').value;
+
+            //构造变量
+            var keyword = new Array();
+            var searchNum = new Array();
+            var link = new Array();
+            var rank = new Array();
+            var tttime = new Array();
+
+            if (num == 0) {
+                alert("请输入热搜数量！")
+            }
+
+            // 基于准备好的dom，初始化echarts实例
+            document.getElementById("main").removeAttribute("_echarts_instance_");
+            var myChart = echarts.init(document.getElementById('main'));
+
+            //请求数据
+            var requestOptions = {
+                method: 'GET',
+                redirect: 'follow'
+            };
+
+
+            fetch("http://pi.deadpoetspoon.xyz:7800/resou/?datacode=lkstr&num=" + num + "&keyword=" + Keyword +
+                    "&sortcode=s" + order,
+                    requestOptions)
+                .then(response => response.json())
+                .then(result => {
+                    result.forEach(rs => {
+                        keyword.unshift(rs.keyword);
+                        searchNum.unshift(rs.searchNum);
+                        link.unshift(rs.link);
+                        rank.unshift(rs.rank);
+                        tttime.unshift(rs.time);
+                    });
+                    if (keyword == 0) {
+                        alert("没有对应的热搜数据");
+                        return
+                    }
+                    myChart.setOption(option);
+                    window.onresize = myChart.resize();
+
+                })
+                .catch(error => console.log('error', error));
+
+
+            // 指定图表的配置项和数据
+            var option = {
+                grid: {
+                    containLabel: true,
+                    right: 120
+                },
+                title: {
+                    text: '关键词微博热搜排行榜',
+                    top: 10,
+                    left: 600,
+                    subtext: '(点击图例可隐藏)',
+                },
+                tooltip: {},
+                legend: {
+                    tooltip: {
+                        show: true
+                    },
+                    data: ['热度', '单日最高热搜排名'],
+                    top: 35,
+                    left: 400,
+                },
+                yAxis: {
+                    data: keyword,
+                    axisPointer: {
+                        label: {
+                            show: true,
+                            margin: 30
+                        }
+                    },
+                    axisLabel: {
+                        formatter: function (val) {
+                            return val + tttime[getArrayIndex(keyword, val)]
+                        }
+                    }
+                },
+                xAxis: [{
+                    type: 'value',
+                    name: '热度',
+                }, {
+                    type: 'value',
+                    name: '单日最高热搜排名',
+                    minInterval: 1,
+                    max: function (value) {
+                        return Math.ceil(value.max * 1.2)
+                    },
+                    splitLine: {
+                        show: false
+                    }
+                }],
+                series: [{
+                        name: '热度',
+                        type: 'bar',
+                        data: searchNum,
+                        label: {
+                            show: true,
+                            position: 'right'
+                        },
+                        emphasis: {
+                            itemStyle: {
+                                color: '#6495ED'
+                            }
+                        },
+                        itemStyle: {
+                            normal: {
+                                color: function (params) {
+                                    if (params.value > 0 && params.value <= 250000) {
+                                        return '#ecbbbc';
+                                    } else if (params.value > 250000 && params.value <= 500000) {
+                                        return "#e7a7a9";
+                                    } else if (params.value > 500000 && params.value <= 750000) {
+                                        return "#e19395";
+                                    } else if (params.value > 750000 && params.value <= 1250000) {
+                                        return "#db7f81";
+                                    } else if (params.value > 1250000 && params.value <= 2000000) {
+                                        return "#d66b6e";
+                                    } else if (params.value > 2000000 && params.value <= 3000000) {
+                                        return "#d0575a";
+                                    } else if (params.value > 3000000 && params.value <= 4500000) {
+                                        return "#ca4346";
+                                    } else if (params.value > 4500000 && params.value <= 7000000) {
+                                        return "#bf3539";
+                                    } else if (params.value > 7000000 && params.value <= 10000000) {
+                                        return "#ab3033";
+                                    } else if (params.value > 10000000 && params.value <= 12000000) {
+                                        return "#972a2d";
+                                    } else if (params.value > 12000000 && params.value <= 13000000) {
+                                        return "#851820";
+                                    } else if (params.value > 13000000 && params.value <= 14000000) {
+                                        return "#751820";
+                                    } else if (params.value > 14000000 && params.value <= 16000000) {
+                                        return "#651820";
+                                    } else {
+                                        return "#460416";
+                                    }
+                                },
+                                barBorderRadius: [5, 22, 22, 5]
+                            }
+                        }
+                    },
+                    {
+                        name: '单日最高热搜排名',
+                        type: 'line',
+                        lineStyle: {
+                            color: '#FF8C00',
+                            width: 1.75
+                        },
+                        emphasis: {
+                            itemStyle: {
+                                color: '#6495ED'
+                            }
+                        },
+                        symbol: 'pin',
+                        symbolSize: 16,
+                        xAxisIndex: 1,
+                        data: rank,
+                        itemStyle: {
+                            normal: {
+                                color: function (params) {
+                                    return '#FFD700'
+                                }
+                            }
+                        }
+                    }
+                ]
+
+            };
+
+            // 处理点击事件并且链接到对应的微博
+            myChart.on('click', function (params) {
+                window.open(link[getArrayIndex(keyword, params.name)])
+            });
+        }
+
+        //关键词 排序
+        function order3() {
+            var num = document.getElementById("Num3").value;
+            var Keyword = document.getElementById("Keyword").value;
+            var order = document.getElementById('order3').value;
+
+            //构造变量
+            var keyword = new Array(); //热搜
+            var searchNum = new Array(); //搜索数
+            var link = new Array(); //热搜链接
+            var rank = new Array(); //最高排名
+            var tttime = new Array();
+
+            if (num.length == 0) {
+                var url = "http://pi.deadpoetspoon.xyz:7800/resou/?datacode=lkstr&num=50&keyword=" + Keyword +
+                    "&sortcode=s" + order;
+            } else {
+                var url = "http://pi.deadpoetspoon.xyz:7800/resou/?datacode=lkstr&num=" + num + "&keyword=" + Keyword +
+                    "&sortcode=s" + order;
+            }
+
+            // 基于准备好的dom，初始化echarts实例
+            document.getElementById("main").removeAttribute("_echarts_instance_");
+            var myChart = echarts.init(document.getElementById('main'));
+
+            //请求数据
+            var requestOptions = {
+                method: 'GET',
+                redirect: 'follow'
+            };
+
+            fetch(url, requestOptions)
+                .then(response => response.json())
+                .then(result => {
+                    result.forEach(rs => {
+                        keyword.unshift(rs.keyword);
+                        searchNum.unshift(rs.searchNum);
+                        link.unshift(rs.link);
+                        rank.unshift(rs.rank);
+                        tttime.unshift(rs.time);
+                    });
+                    if (keyword == 0) {
+                        alert("没有对应的热搜数据");
+                        return
+                    }
+                    myChart.setOption(option);
+                    window.onresize = myChart.resize();
+
+                })
+                .catch(error => console.log('error', error));
+
+
+            // 指定图表的配置项和数据
+            var option = {
+                grid: {
+                    containLabel: true,
+                    right: 120
+                },
+                title: {
+                    text: '关键词微博热搜排行榜',
+                    top: 10,
+                    left: 600,
+                    subtext: '(点击图例可隐藏)',
+                },
+                tooltip: {},
+                legend: {
+                    tooltip: {
+                        show: true
+                    },
+                    data: ['热度', '单日最高热搜排名'],
+                    top: 35,
+                    left: 400,
+                },
+                yAxis: {
+                    data: keyword,
+                    axisPointer: {
+                        label: {
+                            show: true,
+                            margin: 30
+                        }
+                    },
+                    axisLabel: {
+                        formatter: function (val) {
+                            return val + tttime[getArrayIndex(keyword, val)]
+                        }
+                    }
+                },
+                xAxis: [{
+                    type: 'value',
+                    name: '热度',
+                }, {
+                    type: 'value',
+                    name: '单日最高热搜排名',
+                    minInterval: 1,
+                    max: function (value) {
+                        return Math.ceil(value.max * 1.2)
+                    },
+                    splitLine: {
+                        show: false
+                    }
+                }],
+                series: [{
+                        name: '热度',
+                        type: 'bar',
+                        data: searchNum,
+                        label: {
+                            show: true,
+                            position: 'right'
+                        },
+                        emphasis: {
+                            itemStyle: {
+                                color: '#6495ED'
+                            }
+                        },
+                        itemStyle: {
+                            normal: {
+                                color: function (params) {
+                                    // return myColor[getArrayIndex(keyword, params.name)]
+                                    if (params.value > 0 && params.value <= 250000) {
+                                        return '#ecbbbc';
+                                    } else if (params.value > 250000 && params.value <= 500000) {
+                                        return "#e7a7a9";
+                                    } else if (params.value > 500000 && params.value <= 750000) {
+                                        return "#e19395";
+                                    } else if (params.value > 750000 && params.value <= 1250000) {
+                                        return "#db7f81";
+                                    } else if (params.value > 1250000 && params.value <= 2000000) {
+                                        return "#d66b6e";
+                                    } else if (params.value > 2000000 && params.value <= 3000000) {
+                                        return "#d0575a";
+                                    } else if (params.value > 3000000 && params.value <= 4500000) {
+                                        return "#ca4346";
+                                    } else if (params.value > 4500000 && params.value <= 7000000) {
+                                        return "#bf3539";
+                                    } else if (params.value > 7000000 && params.value <= 10000000) {
+                                        return "#ab3033";
+                                    } else if (params.value > 10000000 && params.value <= 12000000) {
+                                        return "#972a2d";
+                                    } else if (params.value > 12000000 && params.value <= 13000000) {
+                                        return "#851820";
+                                    } else if (params.value > 13000000 && params.value <= 14000000) {
+                                        return "#751820";
+                                    } else if (params.value > 14000000 && params.value <= 16000000) {
+                                        return "#651820";
+                                    } else {
+                                        return "#460416";
+                                    }
+                                },
+                                barBorderRadius: [5, 22, 22, 5]
+                            }
+                        }
+                    },
+                    {
+                        name: '单日最高热搜排名',
+                        type: 'line',
+                        lineStyle: {
+                            color: '#FF8C00',
+                            width: 1.75
+                        },
+                        emphasis: {
+                            itemStyle: {
+                                color: '#6495ED'
+                            }
+                        },
+                        symbol: 'pin',
+                        symbolSize: 16,
+                        xAxisIndex: 1,
+                        data: rank,
+                        itemStyle: {
+                            normal: {
+                                color: function (params) {
+                                    return '#FFD700'
+                                }
+                            }
+                        }
+                    }
+                ]
+
+            };
+
+            // 处理点击事件并且链接到对应的微博
+            myChart.on('click', function (params) {
+                //所有的鼠标事件包含参数 params，这是一个包含点击图形的数据信息的对象
+                window.open(link[getArrayIndex(keyword, params.name)])
+            })
+        }
+    </script>
+</body>
+
+</html>
