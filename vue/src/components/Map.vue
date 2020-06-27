@@ -549,7 +549,7 @@ export default {
   position:absolute;
   bottom:0px;
   left:330px;
-  z-index:4;
+  z-index:2;
   opacity: 0.8;
 }
 
