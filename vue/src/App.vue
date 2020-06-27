@@ -1,17 +1,29 @@
 <template>
   <div id="app">
     <!--img src="./assets/logo.png"-->
-    <router-link to="/"> 
+    <!--router-link to="/" class=""> 
     HelloWorld页面
     </router-link>
     <router-link to="/Map"> 
     Map页面
     </router-link>
+    <router-link to="/Echarts"> 
+    Echarts页面
+    </router-link-->
+
+    <!--router-link to="/Cipin"> 
+    Cipin页面
+    </router-link-->
+
+
     <router-view/>
+ 
   </div>
 </template>
 
 <script>
+
+
 export default {
   name: 'App'
 }

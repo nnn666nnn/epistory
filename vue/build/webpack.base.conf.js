@@ -4,6 +4,7 @@ const utils = require('./utils')
 const config = require('../config')
 const vueLoaderConfig = require('./vue-loader.conf')
 
+const webpack = require("webpack")//jquery
 function resolve (dir) {
   return path.join(__dirname, '..', dir)
 }
@@ -78,5 +79,16 @@ module.exports = {
     net: 'empty',
     tls: 'empty',
     child_process: 'empty'
-  }
+  },
+  externals:{
+    T:'T'
+  },
+
+  plugins: [
+    new webpack.optimize.CommonsChunkPlugin('common.js'),
+    new webpack.ProvidePlugin({
+        jQuery: "jquery",
+        $: "jquery"
+    })
+]
 }
