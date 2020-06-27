@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'yiqing.apps.yiqingConfig',
     'rscipin.apps.RscipinConfig',
     'wbcipin.apps.WbcipinConfig',
+    'qingxu.apps.QingxuConfig',
 ]
 
 MIDDLEWARE = [

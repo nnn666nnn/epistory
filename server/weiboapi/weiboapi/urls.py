@@ -23,6 +23,7 @@ urlpatterns = [
     url(r'^',include('resou.urls')),
     url(r'^',include('yiqing.urls')),
     url(r'^',include('rscipin.urls')),
-    url(r'^',include('wbcipin.urls'))
+    url(r'^',include('wbcipin.urls')),
+    url(r'^',include('qingxu.urls'))
 ]
 

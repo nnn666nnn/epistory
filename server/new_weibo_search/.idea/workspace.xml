@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="b8546886-f6be-4713-be1c-d89e0d69f727" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ProjectId" id="1d6odgCbD32mEMvr1fBKREpuh8F" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+  </component>
+  <component name="RunManager">
+    <configuration name="run" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="weibo-search-master" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="D:\Program Files\Python\python.exe" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/run.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Python.run" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="b8546886-f6be-4713-be1c-d89e0d69f727" name="Default Changelist" comment="" />
+      <created>1591754994570</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1591754994570</updated>
+      <workItem from="1591755002143" duration="12082000" />
+      <workItem from="1591787893640" duration="78000" />
+      <workItem from="1591788966067" duration="39000" />
+      <workItem from="1591796707442" duration="70000" />
+      <workItem from="1591797457954" duration="80000" />
+      <workItem from="1591798336498" duration="692000" />
+      <workItem from="1591799861360" duration="1087000" />
+      <workItem from="1591802718915" duration="958000" />
+      <workItem from="1591804045629" duration="2483000" />
+      <workItem from="1591806906815" duration="1937000" />
+      <workItem from="1591809065192" duration="811000" />
+      <workItem from="1591838904657" duration="7666000" />
+      <workItem from="1591856392212" duration="449000" />
+      <workItem from="1591862758982" duration="626000" />
+      <workItem from="1591865646531" duration="2973000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="477" y="25" key="#run" timestamp="1591839520784">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="477" y="25" key="#run/0.0.1536.824@0.0.1536.824" timestamp="1591839520784" />
+    <state width="1493" height="177" key="GridCell.Tab.0.bottom" timestamp="1591856843373">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="177" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1591856843373" />
+    <state width="1493" height="177" key="GridCell.Tab.0.center" timestamp="1591856843373">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="177" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1591856843373" />
+    <state width="1493" height="177" key="GridCell.Tab.0.left" timestamp="1591856843373">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="177" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1591856843373" />
+    <state width="1493" height="177" key="GridCell.Tab.0.right" timestamp="1591856843373">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="177" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1591856843373" />
+    <state width="1493" height="211" key="GridCell.Tab.1.bottom" timestamp="1591849545246">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="211" key="GridCell.Tab.1.bottom/0.0.1536.824@0.0.1536.824" timestamp="1591849545246" />
+    <state width="1493" height="211" key="GridCell.Tab.1.center" timestamp="1591849545246">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="211" key="GridCell.Tab.1.center/0.0.1536.824@0.0.1536.824" timestamp="1591849545246" />
+    <state width="1493" height="211" key="GridCell.Tab.1.left" timestamp="1591849545246">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="211" key="GridCell.Tab.1.left/0.0.1536.824@0.0.1536.824" timestamp="1591849545246" />
+    <state width="1493" height="211" key="GridCell.Tab.1.right" timestamp="1591849545246">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="211" key="GridCell.Tab.1.right/0.0.1536.824@0.0.1536.824" timestamp="1591849545246" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/weibo/spiders/search.py</url>
+          <line>452</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/weibo_search_master$run.coverage" NAME="run Coverage Results" MODIFIED="1591856657616" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+  </component>
+</project>

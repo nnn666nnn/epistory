@@ -41,7 +41,7 @@ def yiqingReturn(request):
             if "s" in scalecode:
                 scale += "rd_yiqing.areacode LIKE '%0000' OR"
             if "h" in scalecode:
-                scale += "rd_yiqing.areacode LIKE '420%' AND rd_yiqing.areacode NOT LIKE '420000' OR"
+                scale += "rd_yiqing.areacode LIKE '42%' AND rd_yiqing.areacode NOT LIKE '420000' OR"
         else:
             scale = "rd_yiqing.areacode = 0 OR"
         scale = scale[:-3]
